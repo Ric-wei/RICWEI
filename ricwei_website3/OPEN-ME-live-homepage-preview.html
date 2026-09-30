@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICWEI | Rural Impact for Children and Women Empowerment Initiative</title>
+    <meta name="description" content="RICWEI empowers rural women and children in Benue State, Nigeria through education, healthcare, vocational training, and advocacy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+/* =========================================================================
+   RICWEI — "Indigo Cloth & Harvest Light" design system
+   Rural Impact for Children and Women Empowerment Initiative
+   ========================================================================= */
+
+:root{
+  /* ---- Color tokens ------------------------------------------------- */
+  --indigo-night:   #1E2A4A;   /* nav / headings on light bg / primary dark */
+  --adire-deep:     #12182B;   /* deepest bg — hero, footer */
+  --indigo-mid:     #2B3D68;   /* mid tone for gradients/hovers */
+  --harvest-gold:   #E4A93A;   /* primary accent — CTAs, icons, highlights */
+  --harvest-gold-dim:#C68F2A;
+  --clay-earth:     #B85C36;   /* secondary accent — tags, small highlights */
+  --millet:         #F6EEDC;   /* warm section background */
+  --millet-deep:    #EFE2C4;   /* card/section alt background */
+  --paper:          #FBF8F1;   /* near-white page background */
+  --ink:            #241E18;   /* body text */
+  --ink-soft:       #5B5347;   /* secondary text */
+  --moss:           #4F7A52;   /* small growth/agriculture accent */
+  --line:           #E4D9C2;   /* hairline borders on light bg */
+  --line-dark:      rgba(246,238,220,0.14);
+  --white:          #ffffff;
+
+  /* ---- Type ------------------------------------------------------- */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body:    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "Space Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* ---- Layout ------------------------------------------------------- */
+  --maxw: 1220px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 20px 50px -20px rgba(18,24,43,0.28);
+  --shadow-tight: 0 8px 24px -12px rgba(18,24,43,0.35);
+  --ease: cubic-bezier(.22,.68,.32,1);
+}
+
+/* ---- Reset ------------------------------------------------------------ */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+body{
+  margin:0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 16.5px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+input,textarea,select{ font-family:inherit; font-size:1rem; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.12; margin:0 0 .5em; color:var(--indigo-night); letter-spacing:-0.01em; }
+h1{ font-size:clamp(2.6rem,5vw,4.4rem); font-weight:500; }
+h2{ font-size:clamp(1.9rem,3.4vw,2.7rem); }
+h3{ font-size:1.28rem; }
+p{ margin:0 0 1em; }
+.container{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline:2.5px solid var(--harvest-gold);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* ---- Eyebrow / label system --------------------------------------------
+   Space Mono "clause" style labels — used site-wide as the structural
+   signature referencing the constitutional register of the org. */
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.74rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: var(--clay-earth);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";
+  width:26px; height:1px;
+  background: var(--clay-earth);
+  display:inline-block;
+}
+.eyebrow.on-dark{ color: var(--harvest-gold); }
+.eyebrow.on-dark::before{ background: var(--harvest-gold); }
+
+/* ---- Stitched-thread signature motif -----------------------------------
+   A hand-stitch dashed rule used as section dividers & link underlines,
+   referencing RICWEI's tailoring / beadwork vocational program. */
+.stitch-rule{
+  width:100%; height:14px;
+  background-repeat: repeat-x;
+  background-size: 22px 14px;
+  background-image: radial-gradient(circle at 4px 7px, var(--clay-earth) 1.6px, transparent 1.7px),
+                     radial-gradient(circle at 14px 7px, var(--harvest-gold) 1.6px, transparent 1.7px);
+  opacity:.85;
+}
+.stitch-rule.tight{ height:8px; background-size:16px 8px; }
+
+.stitch-link{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  color:var(--indigo-night);
+}
+.stitch-link i{ transition: transform .25s var(--ease); }
+.stitch-link::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-4px; height:2px;
+  background-image: linear-gradient(to right, currentColor 65%, transparent 0%);
+  background-size: 9px 2px;
+  background-repeat: repeat-x;
+  color: var(--harvest-gold-dim);
+  transform: scaleX(0); transform-origin:left;
+  transition: transform .3s var(--ease);
+}
+.stitch-link:hover::after{ transform:scaleX(1); }
+.stitch-link:hover i{ transform: translateX(4px); }
+
+/* ---- Buttons ------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:15px 30px;
+  border-radius: 999px;
+  font-weight:700; font-size:.96rem;
+  border:1.5px solid transparent;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), color .22s var(--ease), border-color .22s var(--ease);
+  white-space:nowrap;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-gold{
+  background: var(--harvest-gold); color: var(--adire-deep);
+  box-shadow: 0 12px 26px -12px rgba(228,169,58,0.6);
+}
+.btn-gold:hover{ background:#efb84b; }
+.btn-outline-light{
+  border-color: rgba(246,238,220,0.5); color: var(--millet); background:transparent;
+}
+.btn-outline-light:hover{ border-color:var(--harvest-gold); color:var(--harvest-gold); }
+.btn-outline-dark{
+  border-color: var(--indigo-night); color: var(--indigo-night); background:transparent;
+}
+.btn-outline-dark:hover{ background:var(--indigo-night); color:var(--millet); }
+.btn-block{ width:100%; }
+.btn-sm{ padding:10px 20px; font-size:.85rem; }
+
+/* ---- Top utility bar ------------------------------------------------- */
+.topbar{
+  background: var(--adire-deep); color: rgba(246,238,220,0.78);
+  font-size:.82rem; font-family:var(--font-mono);
+}
+.topbar .container{ display:flex; justify-content:space-between; align-items:center; padding-top:9px; padding-bottom:9px; flex-wrap:wrap; gap:8px; }
+.topbar a{ color: inherit; opacity:.9; margin-right:22px; display:inline-flex; align-items:center; gap:7px; }
+.topbar a:hover{ color: var(--harvest-gold); opacity:1; }
+.topbar .social a{ margin-right:0; margin-left:16px; font-size:.9rem; }
+
+/* ---- Mega navigation ------------------------------------------------- */
+.navbar{
+  background: var(--paper);
+  position: sticky; top:0; z-index:200;
+  border-bottom:1px solid var(--line);
+}
+.nav-container{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; gap:26px; }
+.logo{ display:flex; align-items:center; gap:12px; }
+.logo-mark{
+  width:46px; height:46px; border-radius:12px;
+  background: linear-gradient(155deg, var(--indigo-night), var(--indigo-mid));
+  display:flex; align-items:center; justify-content:center;
+  color: var(--harvest-gold); font-size:1.2rem; flex-shrink:0;
+  box-shadow: 0 8px 18px -8px rgba(30,42,74,0.55);
+}
+.logo-mark-img{
+  width:46px; height:46px; flex-shrink:0; border-radius:50%;
+  box-shadow: 0 8px 18px -8px rgba(30,42,74,0.4);
+  transition: transform .3s var(--ease);
+}
+.logo:hover .logo-mark-img{ transform: rotate(-6deg) scale(1.05); }
+.footer-logo .logo-mark-img{ width:44px; height:44px; }
+.logo-text strong{ display:block; font-family:var(--font-display); font-size:1.28rem; color:var(--indigo-night); letter-spacing:0; }
+.logo-text span{ display:block; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; color:var(--clay-earth); }
+
+.nav-menu{ display:flex; align-items:center; gap:2px; }
+.nav-menu > ul{ display:flex; align-items:center; gap:2px; }
+.nav-menu > ul > li{ position:relative; }
+.nav-menu > ul > li > a{
+  display:flex; align-items:center; gap:6px;
+  padding:12px 16px; font-weight:600; font-size:.94rem; color:var(--indigo-night);
+  border-radius:8px; transition: color .2s, background .2s;
+}
+.nav-menu > ul > li > a:hover, .nav-menu > ul > li > a.active{ color: var(--clay-earth); background: var(--millet); }
+.nav-menu .caret{ font-size:.62rem; opacity:.7; transition: transform .2s; }
+.nav-menu li:hover .caret{ transform: rotate(180deg); }
+
+.mega{
+  position:absolute; top:100%; left:0; margin-top:10px;
+  background: var(--white); border-radius:var(--radius-md);
+  box-shadow: var(--shadow-soft); border:1px solid var(--line);
+  min-width:300px; padding:14px;
+  opacity:0; visibility:hidden; transform: translateY(8px);
+  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+}
+.nav-menu li:hover .mega{ opacity:1; visibility:visible; transform:translateY(0); }
+.mega a{ display:flex; flex-direction:column; gap:2px; padding:10px 14px; border-radius:8px; font-weight:600; color:var(--indigo-night); font-size:.92rem; }
+.mega a small{ font-weight:500; color:var(--ink-soft); font-size:.78rem; font-family:var(--font-body); }
+.mega a:hover{ background:var(--millet); color:var(--clay-earth); }
+
+.nav-cta{ display:flex; align-items:center; gap:14px; }
+.btn-donate-nav{
+  background:var(--harvest-gold); color:var(--adire-deep); padding:11px 22px; border-radius:999px; font-weight:800; font-size:.9rem;
+  display:inline-flex; align-items:center; gap:8px; transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 10px 22px -10px rgba(228,169,58,.65);
+}
+.btn-donate-nav:hover{ transform: translateY(-2px) scale(1.02); }
+.mobile-menu-btn{ display:none; flex-direction:column; gap:5px; width:26px; cursor:pointer; }
+.mobile-menu-btn span{ height:2.5px; background:var(--indigo-night); border-radius:2px; transition: transform .25s, opacity .25s; }
+
+/* ---- Hero -------------------------------------------------------------- */
+.hero{
+  position:relative; overflow:hidden;
+  background: radial-gradient(120% 120% at 85% 0%, var(--indigo-mid) 0%, var(--adire-deep) 55%);
+  color: var(--millet);
+  padding: 100px 0 130px;
+}
+.hero-bg-pattern{
+  position:absolute; inset:0; opacity:.14; pointer-events:none;
+  background-image: radial-gradient(circle, rgba(228,169,58,0.9) 1.4px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+.hero .container{ position:relative; z-index:2; display:grid; grid-template-columns: 1.05fr .95fr; gap:56px; align-items:center; }
+.hero-tagline{ font-family:var(--font-mono); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--harvest-gold); margin-bottom:18px; }
+.hero h1{ color:var(--paper); }
+.hero h1 em{ font-style:normal; color: var(--harvest-gold); }
+.hero-desc{ color: rgba(246,238,220,0.82); font-size:1.08rem; max-width:52ch; margin-bottom:32px; }
+.hero-buttons{ display:flex; gap:16px; flex-wrap:wrap; }
+
+.hero-visual{ position:relative; }
+.hero-visual .frame{
+  border-radius: var(--radius-lg); overflow:hidden; position:relative;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4/4.6;
+}
+.hero-visual .frame img{ width:100%; height:100%; object-fit:cover; }
+.hero-badge{
+  position:absolute; left:-24px; bottom:-24px;
+  background: var(--paper); color:var(--ink);
+  border-radius:var(--radius-md); padding:20px 22px;
+  box-shadow: var(--shadow-soft); max-width:250px;
+  border:1px solid var(--line);
+}
+.hero-badge .stars{ color:var(--harvest-gold-dim); font-size:.8rem; margin-bottom:6px; }
+.hero-badge strong{ font-family:var(--font-display); font-size:1.05rem; display:block; color:var(--indigo-night); }
+.hero-badge span{ font-size:.82rem; color:var(--ink-soft); }
+.hero-stat-chip{
+  position:absolute; top:26px; right:-18px;
+  background: var(--harvest-gold); color:var(--adire-deep);
+  border-radius:var(--radius-md); padding:16px 20px; box-shadow: var(--shadow-tight);
+  text-align:center;
+}
+.hero-stat-chip strong{ display:block; font-family:var(--font-display); font-size:1.7rem; }
+.hero-stat-chip span{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; }
+
+.scroll-indicator{
+  position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+  color: var(--harvest-gold); font-size:1.1rem; z-index:2;
+  animation: bob 2.2s var(--ease) infinite;
+}
+@keyframes bob{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,8px);} }
+
+/* ---- Page header (interior pages) --------------------------------------- */
+.page-header{
+  background: linear-gradient(160deg, var(--indigo-night), var(--adire-deep));
+  color: var(--millet); padding:78px 0 62px; position:relative; overflow:hidden;
+}
+.page-header::after{
+  content:""; position:absolute; inset:0;
+  background-image: radial-gradient(circle, rgba(228,169,58,0.55) 1.3px, transparent 1.5px);
+  background-size:24px 24px; opacity:.16;
+}
+.page-header .container{ position:relative; z-index:1; }
+.page-header .eyebrow{ color:var(--harvest-gold); }
+.page-header .eyebrow::before{ background:var(--harvest-gold); }
+.page-header h1{ color:var(--paper); margin-bottom:12px; }
+.breadcrumb{ font-family:var(--font-mono); font-size:.8rem; color:rgba(246,238,220,.68); }
+.breadcrumb a{ color:var(--harvest-gold); }
+.breadcrumb span{ color:rgba(246,238,220,.85); }
+
+/* ---- Section header ------------------------------------------------- */
+.section{ padding: 96px 0; }
+.section.tight{ padding:64px 0; }
+.section-header{ max-width:640px; margin-bottom:52px; }
+.section-header.center{ margin-left:auto; margin-right:auto; text-align:center; }
+.section-header p.lede{ color:var(--ink-soft); font-size:1.05rem; }
+.on-millet{ background: var(--millet); }
+.on-parchment{ background: var(--millet-deep); }
+.on-dark{ background: linear-gradient(160deg, var(--indigo-night), var(--adire-deep)); color: var(--millet); }
+.on-dark h2, .on-dark h3{ color: var(--paper); }
+.on-dark .section-header p.lede{ color: rgba(246,238,220,.75); }
+
+/* ---- Welcome / intro split ------------------------------------------- */
+.welcome-grid{ display:grid; grid-template-columns: .9fr 1.1fr; gap:64px; align-items:center; }
+.welcome-image{ position:relative; }
+.welcome-image img{ border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); aspect-ratio: 5/6; object-fit:cover; }
+.experience-badge{
+  position:absolute; bottom:-22px; left:-22px; background: var(--indigo-night); color:var(--millet);
+  border-radius:var(--radius-md); padding:18px 22px; box-shadow: var(--shadow-tight);
+}
+.experience-badge strong{ display:block; font-family:var(--font-display); color:var(--harvest-gold); font-size:1.15rem; }
+.experience-badge span{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em; }
+.check-list{ margin: 22px 0 30px; display:flex; flex-direction:column; gap:12px; }
+.check-list li{ display:flex; align-items:flex-start; gap:12px; color:var(--ink-soft); }
+.check-list i{ color: var(--moss); margin-top:4px; }
+
+/* ---- Objectives / pillar cards ----------------------------------------
+   Labeled by constitutional clause reference rather than a generic
+   01/02/03 sequence, since these enumerate real constitutional articles. */
+.objectives-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:20px; }
+.objective-card{
+  background: var(--white); border:1px solid var(--line); border-radius: var(--radius-md);
+  padding:30px 28px; transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+}
+.objective-card:hover{ transform: translateY(-5px); box-shadow: var(--shadow-tight); border-color: var(--harvest-gold-dim); }
+.objective-clause{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; color:var(--clay-earth); margin-bottom:12px; display:block; }
+.objective-card h3{ margin-bottom:8px; }
+.objective-card p{ color:var(--ink-soft); margin:0; font-size:.96rem; }
+
+/* ---- Mission / Vision / Values cards ------------------------------------ */
+.mvv-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; }
+.mvv-card{
+  background: var(--white); border-radius: var(--radius-md); padding:34px 30px;
+  border:1px solid var(--line); position:relative; overflow:hidden;
+}
+.mvv-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg,var(--harvest-gold),var(--clay-earth)); }
+.mvv-icon{
+  width:54px; height:54px; border-radius:14px; background: var(--indigo-night); color:var(--harvest-gold);
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:18px;
+}
+.on-dark .mvv-card{ background: rgba(246,238,220,0.06); border-color: var(--line-dark); }
+.on-dark .mvv-card h3{ color:var(--paper); }
+.on-dark .mvv-card p{ color: rgba(246,238,220,.78); }
+
+/* ---- Stat counter band ------------------------------------------------- */
+.stats-band{ background: linear-gradient(160deg, var(--indigo-night), var(--adire-deep)); color: var(--millet); padding:70px 0; }
+.stats-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:20px; text-align:center; }
+.stat-item{ padding:0 12px; border-left:1px solid var(--line-dark); }
+.stat-item:first-child{ border-left:none; }
+.stat-item .counter{ font-family:var(--font-display); font-size:clamp(2.1rem,4vw,3rem); color:var(--harvest-gold); margin-bottom:6px; }
+.stat-item p{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color: rgba(246,238,220,.72); margin:0; }
+
+/* ---- Programs / causes -------------------------------------------------- */
+.filter-tabs{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+.filter-tab{
+  padding:10px 20px; border-radius:999px; border:1.5px solid var(--line);
+  font-weight:700; font-size:.85rem; color:var(--ink-soft); background:var(--white); transition: all .2s;
+}
+.filter-tab:hover{ border-color:var(--harvest-gold-dim); color:var(--indigo-night); }
+.filter-tab.active{ background:var(--indigo-night); border-color:var(--indigo-night); color:var(--paper); }
+
+.causes-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; }
+.cause-card{ background: var(--white); border-radius: var(--radius-md); overflow:hidden; border:1px solid var(--line); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.cause-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+.cause-img{ height:210px; background-size:cover; background-position:center; position:relative; }
+.cause-tag{
+  position:absolute; top:16px; left:16px; background: rgba(18,24,43,0.78); backdrop-filter: blur(4px);
+  color: var(--harvest-gold); font-family:var(--font-mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase;
+  padding:7px 13px; border-radius:999px;
+}
+.cause-content{ padding:26px; }
+.cause-content h3{ margin-bottom:10px; font-size:1.15rem; }
+.cause-content p{ color:var(--ink-soft); font-size:.94rem; margin-bottom:16px; }
+
+/* ---- Testimonials -------------------------------------------------------- */
+.testimonial-slider{ position:relative; max-width:760px; margin:0 auto; }
+.testimonial-track{ overflow:hidden; }
+.testimonial-slides{ display:flex; transition: transform .5s var(--ease); }
+.t-slide{ min-width:100%; padding: 4px 4px 4px; }
+.t-card{
+  background: rgba(246,238,220,0.06); border:1px solid var(--line-dark); border-radius: var(--radius-lg);
+  padding:44px; text-align:center;
+}
+.t-card i.quote{ color: var(--harvest-gold); font-size:1.6rem; margin-bottom:18px; }
+.t-card p.quote-text{ font-family:var(--font-display); font-size:1.3rem; font-weight:500; line-height:1.5; color:var(--paper); margin-bottom:22px; }
+.t-card .who strong{ display:block; color:var(--harvest-gold); }
+.t-card .who span{ font-family:var(--font-mono); font-size:.72rem; color: rgba(246,238,220,.65); text-transform:uppercase; letter-spacing:.06em; }
+.t-nav{ display:flex; justify-content:center; gap:12px; margin-top:26px; }
+.t-dot{ width:9px; height:9px; border-radius:50%; background: rgba(246,238,220,.32); border:none; padding:0; transition: background .2s, transform .2s; }
+.t-dot.active{ background: var(--harvest-gold); transform: scale(1.25); }
+.t-arrow{
+  position:absolute; top:50%; transform:translateY(-50%); background: var(--paper); color:var(--indigo-night);
+  width:42px; height:42px; border-radius:50%; border:none; display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow-tight); transition: background .2s;
+}
+.t-arrow:hover{ background: var(--harvest-gold); }
+.t-arrow.prev{ left:-58px; } .t-arrow.next{ right:-58px; }
+@media (max-width:900px){ .t-arrow{ display:none; } }
+
+/* ---- Team / board grid --------------------------------------------------- */
+.team-grid{ display:grid; grid-template-columns: repeat(5,1fr); gap:22px; }
+.team-card{ text-align:center; }
+.team-img{ border-radius: var(--radius-md); overflow:hidden; aspect-ratio:1; margin-bottom:16px; position:relative; box-shadow: var(--shadow-tight); }
+.team-img img{ width:100%; height:100%; object-fit:cover; transition: transform .4s var(--ease); }
+.team-card:hover .team-img img{ transform: scale(1.08); }
+.team-card h3{ font-size:1.02rem; margin-bottom:2px; }
+.team-card .role{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--clay-earth); margin-bottom:8px; }
+.team-card .bio{ font-size:.87rem; color:var(--ink-soft); }
+
+/* ---- News / blog cards --------------------------------------------------- */
+.news-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; }
+.news-card{ background:var(--white); border-radius: var(--radius-md); overflow:hidden; border:1px solid var(--line); transition: transform .3s var(--ease), box-shadow .3s; }
+.news-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+.news-img{ height:190px; background-size:cover; background-position:center; }
+.news-content{ padding:24px 24px 26px; }
+.news-date{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--clay-earth); display:flex; align-items:center; gap:7px; margin-bottom:12px; }
+.news-content h3{ font-size:1.08rem; margin-bottom:10px; }
+.news-content p{ color:var(--ink-soft); font-size:.9rem; margin-bottom:14px; }
+.news-cats{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+.news-cats span{ font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.05em; background:var(--millet); color:var(--clay-earth); padding:4px 9px; border-radius:999px; }
+
+/* ---- CTA banner ----------------------------------------------------------- */
+.cta-banner{ background: linear-gradient(120deg, var(--clay-earth), #8f4326); padding:64px 0; color:var(--paper); position:relative; overflow:hidden; }
+.cta-banner::after{ content:""; position:absolute; inset:0; background-image: radial-gradient(circle, rgba(255,255,255,.22) 1.2px, transparent 1.4px); background-size:22px 22px; opacity:.4; }
+.cta-content{ position:relative; z-index:1; text-align:center; max-width:640px; margin:0 auto; }
+.cta-content h2{ color:var(--paper); }
+.cta-content p{ color: rgba(255,255,255,.86); margin-bottom:28px; }
+.cta-buttons{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.btn-white{ background:var(--paper); color:var(--clay-earth); }
+.btn-white:hover{ background:var(--indigo-night); color:var(--millet); }
+
+/* ---- Partners strip -------------------------------------------------------- */
+.partners-grid{ display:grid; grid-template-columns: repeat(5,1fr); gap:20px; }
+.partner-logo{
+  border:1.5px dashed var(--line); border-radius: var(--radius-sm); height:78px;
+  display:flex; align-items:center; justify-content:center; color:var(--ink-soft);
+  font-family:var(--font-mono); font-size:.75rem; text-align:center; padding:10px;
+}
+
+/* ---- Newsletter ------------------------------------------------------------- */
+.newsletter-section{ background: var(--indigo-night); color:var(--millet); padding:56px 0; }
+.newsletter-content{ display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+.newsletter-content h2{ color:var(--paper); margin-bottom:6px; font-size:1.6rem; }
+.newsletter-content p{ color: rgba(246,238,220,.75); margin:0; }
+.newsletter-form{ display:flex; gap:0; flex:0 0 auto; }
+.newsletter-form input{ padding:15px 20px; border-radius:999px 0 0 999px; border:none; width:270px; background: rgba(246,238,220,0.1); color:var(--paper); }
+.newsletter-form input::placeholder{ color: rgba(246,238,220,.55); }
+.newsletter-form button{ padding:15px 24px; border-radius:0 999px 999px 0; background:var(--harvest-gold); color:var(--adire-deep); border:none; font-weight:800; display:flex; align-items:center; gap:8px; }
+
+/* ---- Footer ------------------------------------------------------------------ */
+.footer{ background: var(--adire-deep); color: rgba(246,238,220,.72); padding:78px 0 0; }
+.footer-grid{ display:grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap:44px; padding-bottom:50px; border-bottom:1px solid var(--line-dark); }
+.footer-logo{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.footer-logo strong{ font-family:var(--font-display); font-size:1.3rem; color:var(--paper); }
+.footer-col h4{ color:var(--paper); font-family:var(--font-mono); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px; }
+.footer-col ul{ display:flex; flex-direction:column; gap:11px; }
+.footer-col a{ transition: color .2s; }
+.footer-col a:hover{ color: var(--harvest-gold); }
+.footer-contact li{ display:flex; gap:10px; align-items:flex-start; font-size:.9rem; }
+.footer-contact i{ color:var(--harvest-gold); margin-top:3px; }
+.footer-social{ display:flex; gap:10px; }
+.footer-social a{ width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition: background .2s, border-color .2s; }
+.footer-social a:hover{ background:var(--harvest-gold); color:var(--adire-deep); border-color:var(--harvest-gold); }
+.footer-bottom{ padding:26px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.82rem; }
+.footer-bottom a{ margin-left:18px; }
+.back-to-top{
+  position:fixed; bottom:26px; right:26px; width:48px; height:48px; border-radius:50%;
+  background: var(--harvest-gold); color: var(--adire-deep); display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow-tight); opacity:0; visibility:hidden; transform: translateY(12px); transition: all .3s var(--ease); z-index:150;
+}
+.back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+
+/* ---- Gallery ------------------------------------------------------------------ */
+.gallery-grid{ column-count:4; column-gap:18px; }
+.gallery-item{ break-inside:avoid; margin-bottom:18px; border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-tight); position:relative; }
+.gallery-item img{ width:100%; display:block; transition: transform .4s var(--ease); }
+.gallery-item:hover img{ transform: scale(1.06); }
+.gallery-item.tall img{ aspect-ratio:3/4.2; object-fit:cover; }
+.gallery-item:not(.tall) img{ aspect-ratio:1; object-fit:cover; }
+.gallery-filter{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; justify-content:center; }
+
+/* ---- FAQ accordion -------------------------------------------------------------- */
+.faq-list{ max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+.faq-item{ background:var(--white); border:1px solid var(--line); border-radius: var(--radius-md); overflow:hidden; }
+.faq-q{ display:flex; align-items:center; justify-content:space-between; padding:22px 26px; font-weight:700; color:var(--indigo-night); gap:20px; }
+.faq-q i{ color: var(--harvest-gold-dim); transition: transform .3s var(--ease); flex-shrink:0; }
+.faq-item.open .faq-q i{ transform: rotate(135deg); }
+.faq-a{ max-height:0; overflow:hidden; transition: max-height .35s var(--ease); }
+.faq-a-inner{ padding:0 26px 24px; color:var(--ink-soft); }
+
+/* ---- Forms --------------------------------------------------------------------- */
+.form-grid input, .form-grid textarea, .form-grid select{
+  width:100%; padding:15px 18px; border-radius:10px; border:1.5px solid var(--line);
+  background: var(--white); color:var(--ink); margin-bottom:16px; transition: border-color .2s, box-shadow .2s;
+}
+.form-grid input:focus, .form-grid textarea:focus, .form-grid select:focus{ border-color: var(--harvest-gold-dim); box-shadow: 0 0 0 4px rgba(228,169,58,.16); outline:none; }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.field-error{ display:block; color:#B23A2E; font-size:.78rem; margin:-11px 0 12px; font-weight:600; }
+.field-invalid{ border-color:#B23A2E !important; }
+.form-success{ background: rgba(79,122,82,0.12); border:1px solid var(--moss); color:#2d5c30; padding:16px 20px; border-radius:10px; margin-bottom:18px; font-weight:600; font-size:.92rem; }
+
+/* Contact page */
+.contact-grid{ display:grid; grid-template-columns: .85fr 1.15fr; gap:56px; }
+.contact-item{ display:flex; gap:18px; margin-bottom:26px; }
+.contact-icon{ width:50px; height:50px; border-radius:12px; background: var(--indigo-night); color:var(--harvest-gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.contact-item h4{ margin-bottom:4px; font-size:1rem; }
+.contact-item p{ color:var(--ink-soft); margin:0; }
+.contact-form-col{ background: var(--white); border-radius: var(--radius-lg); padding:40px; border:1px solid var(--line); box-shadow: var(--shadow-tight); }
+.map-section{ margin-top:60px; border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-tight); }
+.map-section iframe{ width:100%; display:block; border:0; filter: grayscale(.25) contrast(1.05); }
+
+/* Donate page */
+.donate-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:56px; align-items:start; }
+.impact-list{ display:flex; flex-direction:column; gap:14px; margin:26px 0; }
+.impact-item{ display:flex; gap:14px; align-items:flex-start; background: var(--white); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+.impact-item i{ color: var(--moss); margin-top:2px; }
+.bank-details{ background: var(--indigo-night); color: var(--millet); border-radius: var(--radius-md); padding:26px 28px; margin-top:10px; }
+.bank-details h4{ color: var(--harvest-gold); margin-bottom:14px; font-size:1rem; display:flex; align-items:center; gap:8px; }
+.bank-details p{ margin-bottom:8px; font-size:.94rem; color: rgba(246,238,220,.88); }
+.donate-form-col{ background: var(--white); border-radius: var(--radius-lg); padding:38px; border:1px solid var(--line); box-shadow: var(--shadow-soft); position:sticky; top:110px; }
+.freq-toggle{ display:flex; background: var(--millet); border-radius:999px; padding:5px; margin-bottom:22px; }
+.freq-toggle button{ flex:1; padding:10px; border:none; background:transparent; border-radius:999px; font-weight:700; font-size:.86rem; color:var(--ink-soft); transition: all .2s; }
+.freq-toggle button.active{ background:var(--indigo-night); color:var(--paper); }
+.amount-options{ display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:14px; }
+.amount-options label{ position:relative; }
+.amount-options input{ position:absolute; opacity:0; }
+.amount-options span{
+  display:block; text-align:center; padding:14px 8px; border-radius:10px; border:1.5px solid var(--line);
+  font-weight:700; font-size:.88rem; color:var(--indigo-night); transition: all .2s; cursor:pointer;
+}
+.amount-options input:checked + span{ background: var(--indigo-night); border-color:var(--indigo-night); color: var(--harvest-gold); }
+.custom-amount{ margin-bottom:6px; }
+.impact-preview{ background: var(--millet); border-radius:10px; padding:14px 16px; font-size:.88rem; color: var(--ink-soft); margin-bottom:20px; display:flex; gap:10px; align-items:flex-start; }
+.impact-preview i{ color: var(--clay-earth); margin-top:2px; }
+.impact-preview strong{ color:var(--indigo-night); }
+
+/* ---- Scroll reveal utility --------------------------------------------------- */
+.reveal{ opacity:0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal-stagger .reveal:nth-child(1){ transition-delay:.03s; }
+.reveal-stagger .reveal:nth-child(2){ transition-delay:.09s; }
+.reveal-stagger .reveal:nth-child(3){ transition-delay:.15s; }
+.reveal-stagger .reveal:nth-child(4){ transition-delay:.21s; }
+.reveal-stagger .reveal:nth-child(5){ transition-delay:.27s; }
+.reveal-stagger .reveal:nth-child(6){ transition-delay:.33s; }
+.reveal-stagger .reveal:nth-child(7){ transition-delay:.39s; }
+
+/* ---- Volunteer / get-involved page -------------------------------------------- */
+.ways-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; }
+.way-card{ background:var(--white); border:1px solid var(--line); border-radius: var(--radius-md); padding:32px 28px; }
+.way-card .mvv-icon{ margin-bottom:16px; }
+.way-card h3{ margin-bottom:8px; }
+.way-card p{ color:var(--ink-soft); font-size:.94rem; }
+
+/* ============================= Responsive ==================================== */
+@media (max-width: 1080px){
+  .stats-grid{ grid-template-columns: repeat(2,1fr); gap:36px 20px; }
+  .stat-item:nth-child(3){ border-left:none; }
+  .team-grid{ grid-template-columns: repeat(3,1fr); }
+  .causes-grid, .news-grid{ grid-template-columns: repeat(2,1fr); }
+  .partners-grid{ grid-template-columns: repeat(3,1fr); }
+  .gallery-grid{ column-count:3; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px){
+  .nav-menu{ display:none; }
+  .mobile-menu-btn{ display:flex; }
+  .mobile-menu-btn.open span:nth-child(1){ transform: translateY(7.5px) rotate(45deg); }
+  .mobile-menu-btn.open span:nth-child(2){ opacity:0; }
+  .mobile-menu-btn.open span:nth-child(3){ transform: translateY(-7.5px) rotate(-45deg); }
+  .nav-cta .btn-donate-nav span.label{ display:none; }
+  .hero .container, .welcome-grid, .donate-grid, .contact-grid{ grid-template-columns:1fr; }
+  .hero-visual{ order:-1; margin-bottom:20px; }
+  .mvv-grid, .objectives-grid, .ways-grid{ grid-template-columns:1fr; }
+  .form-row{ grid-template-columns:1fr; }
+  .donate-form-col{ position:static; }
+  .gallery-grid{ column-count:2; }
+}
+@media (max-width: 640px){
+  .team-grid, .causes-grid, .news-grid, .partners-grid{ grid-template-columns: repeat(2,1fr); }
+  .stats-grid{ grid-template-columns: repeat(2,1fr); }
+  .newsletter-content{ flex-direction:column; align-items:flex-start; }
+  .newsletter-form{ width:100%; }
+  .newsletter-form input{ width:100%; }
+  .footer-grid{ grid-template-columns:1fr; }
+  .gallery-grid{ column-count:1; }
+  .amount-options{ grid-template-columns: repeat(2,1fr); }
+}
+
+/* ---- Mobile drawer menu --------------------------------------------------------- */
+.mobile-drawer{
+  position:fixed; inset:0 0 0 auto; width:min(340px,86vw); background:var(--paper); z-index:300;
+  transform: translateX(100%); transition: transform .32s var(--ease); box-shadow: -20px 0 50px rgba(0,0,0,.25);
+  overflow-y:auto; padding:26px;
+}
+.mobile-drawer.open{ transform: translateX(0); }
+.mobile-drawer-backdrop{ position:fixed; inset:0; background: rgba(18,24,43,.5); z-index:290; opacity:0; visibility:hidden; transition: opacity .3s; }
+.mobile-drawer-backdrop.show{ opacity:1; visibility:visible; }
+.mobile-drawer .close-drawer{ margin-left:auto; display:block; font-size:1.4rem; color:var(--indigo-night); margin-bottom:24px; }
+.mobile-drawer ul{ display:flex; flex-direction:column; gap:4px; }
+.mobile-drawer > ul > li > a{ display:block; padding:14px 6px; font-weight:700; font-size:1.05rem; color:var(--indigo-night); border-bottom:1px solid var(--line); }
+.mobile-drawer .sub{ padding-left:14px; }
+.mobile-drawer .sub a{ font-weight:600; font-size:.92rem; color:var(--ink-soft); border-bottom:none; padding:9px 6px; }
+
+/* =========================================================================
+   RICWEI — Homepage welcome intro + living hero animation
+   ========================================================================= */
+
+/* ---- Welcome intro overlay (plays once per browser session) ------------- */
+body.welcome-active{ overflow:hidden; }
+
+.welcome-overlay{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(120% 120% at 50% 0%, var(--indigo-mid) 0%, var(--adire-deep) 62%);
+  overflow:hidden;
+}
+.welcome-overlay.leaving{ animation: welcomeFadeOut .7s var(--ease) forwards; }
+.welcome-overlay.auto-leaving{ animation: welcomeFadeOut .9s var(--ease) 3.2s forwards; }
+
+.welcome-overlay-bg{
+  position:absolute; inset:0; opacity:.16; pointer-events:none;
+  background-image: radial-gradient(circle, rgba(228,169,58,0.9) 1.4px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+.welcome-glow{
+  position:absolute; left:50%; bottom:-32%; width:900px; height:900px; max-width:140vw;
+  transform:translateX(-50%);
+  background: radial-gradient(circle, rgba(228,169,58,.35), transparent 62%);
+  animation: welcomeGlowPulse 4s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes welcomeGlowPulse{
+  0%,100%{ opacity:.55; transform:translateX(-50%) scale(1); }
+  50%{ opacity:1; transform:translateX(-50%) scale(1.08); }
+}
+
+.welcome-content{ position:relative; z-index:2; text-align:center; padding:0 24px; max-width:580px; }
+.welcome-mark{
+  width:104px; height:104px; margin:0 auto 24px; display:block;
+  opacity:0; transform: scale(.55) rotate(-8deg);
+  animation: welcomePop .9s var(--ease) .15s forwards;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.35));
+}
+@keyframes welcomePop{
+  0%{ opacity:0; transform:scale(.5) rotate(-10deg); }
+  60%{ opacity:1; transform:scale(1.08) rotate(3deg); }
+  100%{ opacity:1; transform:scale(1) rotate(0deg); }
+}
+.welcome-eyebrow{
+  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase;
+  color: var(--harvest-gold); margin-bottom:16px;
+  opacity:0; animation: welcomeRise .8s var(--ease) .5s forwards;
+}
+.welcome-title{
+  color: var(--paper); font-size:clamp(2.1rem,6vw,3.5rem); margin-bottom:14px; line-height:1.08;
+  opacity:0; animation: welcomeRise .8s var(--ease) .65s forwards;
+}
+.welcome-title em{ font-style:normal; color:var(--harvest-gold); }
+.welcome-sub{
+  color: rgba(246,238,220,.82); font-size:1.05rem; margin:0 auto 34px; max-width:44ch;
+  opacity:0; animation: welcomeRise .8s var(--ease) .8s forwards;
+}
+@keyframes welcomeRise{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
+
+.welcome-skip{
+  opacity:0; animation: welcomeRise .8s var(--ease) 1s forwards;
+  background:transparent; border:1.5px solid rgba(246,238,220,.4); color:var(--paper);
+  padding:13px 28px; border-radius:999px; font-family:var(--font-mono); font-size:.74rem;
+  letter-spacing:.1em; text-transform:uppercase; display:inline-flex; align-items:center; gap:10px;
+  cursor:pointer; transition: all .25s var(--ease);
+}
+.welcome-skip:hover{ background:var(--harvest-gold); border-color:var(--harvest-gold); color:var(--adire-deep); transform:translateY(-2px); }
+
+.welcome-progress{ position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(246,238,220,.14); }
+.welcome-progress span{
+  display:block; height:100%; width:0%; background: var(--harvest-gold);
+  animation: welcomeProgress 3.3s linear forwards;
+}
+@keyframes welcomeProgress{ from{ width:0%; } to{ width:100%; } }
+@keyframes welcomeFadeOut{ to{ opacity:0; visibility:hidden; pointer-events:none; } }
+
+@media (prefers-reduced-motion: reduce){
+  .welcome-overlay{ display:none !important; }
+}
+
+/* ---- Living hero: Ken Burns slideshow ------------------------------------ */
+.kenburns-frame{ position:relative; background:var(--indigo-night); }
+.kb-slide{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition: opacity 1.5s ease;
+}
+.kb-slide.active{ opacity:1; animation: kbZoomPan 9s ease-out forwards; z-index:1; }
+@keyframes kbZoomPan{
+  0%{ transform: scale(1.14) translate(0,0); }
+  100%{ transform: scale(1.02) translate(-1.2%,-1.2%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .kb-slide.active{ animation:none; transform:none; }
+}
+
+/* ---- Floating nature motifs ---------------------------------------------- */
+.floating-motifs{ position:absolute; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+.motif{ position:absolute; }
+i.motif{ color: var(--harvest-gold); opacity:.32; }
+.motif-1{ top:12%; left:5%; font-size:1.7rem; animation: drift1 9s ease-in-out infinite; }
+.motif-2{ top:64%; left:9%; font-size:1.25rem; color:var(--moss); opacity:.4; animation: drift2 11s ease-in-out infinite; }
+.motif-3{ top:32%; left:47%; width:8px; height:8px; border-radius:50%; background:var(--clay-earth); opacity:.5; animation: drift3 7s ease-in-out infinite; }
+.motif-4{ top:18%; right:7%; font-size:1.4rem; opacity:.3; animation: drift2 13s ease-in-out infinite; }
+.motif-5{ top:76%; right:15%; width:6px; height:6px; border-radius:50%; background:var(--harvest-gold); opacity:.55; animation: drift1 8s ease-in-out infinite; }
+.motif-6{ top:48%; left:2%; width:5px; height:5px; border-radius:50%; background:var(--paper); opacity:.35; animation: drift3 10s ease-in-out infinite; }
+@keyframes drift1{ 0%,100%{ transform:translate(0,0) rotate(0deg);} 50%{ transform:translate(10px,-16px) rotate(8deg);} }
+@keyframes drift2{ 0%,100%{ transform:translate(0,0) rotate(0deg);} 50%{ transform:translate(-14px,12px) rotate(-6deg);} }
+@keyframes drift3{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(6px,-10px) scale(1.5);} }
+
+/* ---- Welcome-section floating accent (echoes hero motifs, lower key) ----- */
+.welcome-image{ position:relative; }
+.welcome-image .motif{ position:absolute; z-index:3; }
+
+</style>
+</head>
+<body class="welcome-active">
+
+  <div class="welcome-overlay" id="welcomeOverlay" role="dialog" aria-label="Welcome to RICWEI">
+    <div class="welcome-overlay-bg"></div>
+    <div class="welcome-glow"></div>
+    <div class="welcome-content">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN1bkdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0M2OEYyQSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEE5M0EiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImNpcmNsZUNsaXAiPgogICAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjIyOCIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+CgogIDwhLS0gQmFzZSBkaXNjIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjI4IiBmaWxsPSIjRkJGOEYxIi8+CgogIDwhLS0gUmlzaW5nIHN1biBhcmNzLCBjbGlwcGVkIHRvIGRpc2MgLS0+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NpcmNsZUNsaXApIj4KICAgIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5MiIgcj0iMTUwIiBmaWxsPSJ1cmwoI3N1bkdyYWQpIi8+CiAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzOTIiIHI9IjExMiIgZmlsbD0iI0Y2RUVEQyIvPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzkyIiByPSIxMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSIvPgogICAgPCEtLSBzdW4gcmF5cyAtLT4KICAgIDxnIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii44NSI+CiAgICAgIDxsaW5lIHgxPSIyNTYiIHkxPSIyMTYiIHgyPSIyNTYiIHkyPSIyNDQiLz4KICAgICAgPGxpbmUgeDE9IjE3NiIgeTE9IjI0OCIgeDI9IjE5OCIgeTI9IjI2MiIvPgogICAgICA8bGluZSB4MT0iMzM2IiB5MT0iMjQ4IiB4Mj0iMzE0IiB5Mj0iMjYyIi8+CiAgICAgIDxsaW5lIHgxPSIxMzAiIHkxPSIzMTAiIHgyPSIxNTgiIHkyPSIzMTIiLz4KICAgICAgPGxpbmUgeDE9IjM4MiIgeTE9IjMxMCIgeDI9IjM1NCIgeTI9IjMxMiIvPgogICAgPC9nPgogIDwvZz4KCiAgPCEtLSBNb3NzIGdyb3VuZCBtb3VuZCAtLT4KICA8cGF0aCBkPSJNIDExOCA0MzAgUSAyNTYgMzcyIDM5NCA0MzAgTCAzOTQgNDcwIFEgMjU2IDUwMCAxMTggNDcwIFoiIGZpbGw9IiM0RjdBNTIiIGNsaXAtcGF0aD0idXJsKCNjaXJjbGVDbGlwKSIvPgoKICA8IS0tIEd1YXJkaWFuIGZpZ3VyZSAobW90aGVyKSDigJQgc2hlbHRlcmluZyBhcmNoIC0tPgogIDxnIGZpbGw9IiMxRTJBNEEiPgogICAgPCEtLSBoZWFkIC0tPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjIyIiByPSIzMCIvPgogICAgPCEtLSBzaGVsdGVyaW5nIGFybXMvY2xvYWsgZm9ybWluZyBwcm90ZWN0aXZlIGFyY2ggb3ZlciBjaGlsZCAtLT4KICAgIDxwYXRoIGQ9Ik0gMjU2IDI1MAogICAgICAgICAgICAgQyAxNzYgMjUwIDE1MCAzMjAgMTUwIDQwMAogICAgICAgICAgICAgTCAxNTAgNDMwCiAgICAgICAgICAgICBMIDE5NCA0MzAKICAgICAgICAgICAgIEwgMTk0IDQwMAogICAgICAgICAgICAgQyAxOTQgMzQ0IDIxNiAzMDAgMjU2IDI5NgogICAgICAgICAgICAgQyAyOTYgMzAwIDMxOCAzNDQgMzE4IDQwMAogICAgICAgICAgICAgTCAzMTggNDMwCiAgICAgICAgICAgICBMIDM2MiA0MzAKICAgICAgICAgICAgIEwgMzYyIDQwMAogICAgICAgICAgICAgQyAzNjIgMzIwIDMzNiAyNTAgMjU2IDI1MCBaIi8+CiAgPC9nPgoKICA8IS0tIENoaWxkIGZpZ3VyZSBzaGVsdGVyZWQgd2l0aGluIC0tPgogIDxnIGZpbGw9IiNGQkY4RjEiPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzUyIiByPSIxNyIvPgogICAgPHBhdGggZD0iTSAyNTYgMzcwIEMgMjM0IDM3MCAyMjQgMzkyIDIyNCA0MTYgTCAyMjQgNDMwIEwgMjg4IDQzMCBMIDI4OCA0MTYgQyAyODggMzkyIDI3OCAzNzAgMjU2IDM3MCBaIi8+CiAgPC9nPgoKICA8IS0tIEFkaXJlIGNsb3RoIGRvdCBhcmMsIHJlZmVyZW5jaW5nIGluZGlnbyB0ZXh0aWxlIHBhdHRlcm4gLS0+CiAgPGcgZmlsbD0iI0I4NUMzNiI+CiAgICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIxODIiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMTg2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjEzMCIgcj0iNS41Ii8+CiAgICA8Y2lyY2xlIGN4PSIyOTQiIGN5PSIxMzAiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMzI2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjM1MiIgY3k9IjE4MiIgcj0iNS41Ii8+CiAgPC9nPgoKICA8IS0tIE91dGVyIHJpbmcsIHN0aXRjaGVkIGNsb3RoLWVkZ2Ugc3R5bGUgLS0+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSI3Ii8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgNyIgb3BhY2l0eT0iLjU1Ii8+Cjwvc3ZnPgo=" alt="RICWEI emblem" class="welcome-mark">
+      <p class="welcome-eyebrow">Rural Impact for Children &amp; Women Empowerment Initiative</p>
+      <h1 class="welcome-title">Welcome to <em>RICWEI</em></h1>
+      <p class="welcome-sub">Building hope for rural women, adolescent girls, and children across Benue State, Nigeria — one community at a time.</p>
+      <button type="button" class="welcome-skip" id="welcomeSkip">Enter Site <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="welcome-progress"><span></span></div>
+  </div>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="top-bar-content" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;width:100%;">
+        <div class="contact-info">
+          <a href="mailto:royceyter6@gmail.com"><i class="fas fa-envelope"></i> royceyter6@gmail.com</a>
+          <a href="tel:+2347064916811"><i class="fas fa-phone"></i> +234 706 491 6811</a>
+          <span style="opacity:.6;">CAC/IT/9430700</span>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN1bkdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0M2OEYyQSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEE5M0EiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImNpcmNsZUNsaXAiPgogICAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjIyOCIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+CgogIDwhLS0gQmFzZSBkaXNjIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjI4IiBmaWxsPSIjRkJGOEYxIi8+CgogIDwhLS0gUmlzaW5nIHN1biBhcmNzLCBjbGlwcGVkIHRvIGRpc2MgLS0+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NpcmNsZUNsaXApIj4KICAgIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5MiIgcj0iMTUwIiBmaWxsPSJ1cmwoI3N1bkdyYWQpIi8+CiAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzOTIiIHI9IjExMiIgZmlsbD0iI0Y2RUVEQyIvPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzkyIiByPSIxMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSIvPgogICAgPCEtLSBzdW4gcmF5cyAtLT4KICAgIDxnIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii44NSI+CiAgICAgIDxsaW5lIHgxPSIyNTYiIHkxPSIyMTYiIHgyPSIyNTYiIHkyPSIyNDQiLz4KICAgICAgPGxpbmUgeDE9IjE3NiIgeTE9IjI0OCIgeDI9IjE5OCIgeTI9IjI2MiIvPgogICAgICA8bGluZSB4MT0iMzM2IiB5MT0iMjQ4IiB4Mj0iMzE0IiB5Mj0iMjYyIi8+CiAgICAgIDxsaW5lIHgxPSIxMzAiIHkxPSIzMTAiIHgyPSIxNTgiIHkyPSIzMTIiLz4KICAgICAgPGxpbmUgeDE9IjM4MiIgeTE9IjMxMCIgeDI9IjM1NCIgeTI9IjMxMiIvPgogICAgPC9nPgogIDwvZz4KCiAgPCEtLSBNb3NzIGdyb3VuZCBtb3VuZCAtLT4KICA8cGF0aCBkPSJNIDExOCA0MzAgUSAyNTYgMzcyIDM5NCA0MzAgTCAzOTQgNDcwIFEgMjU2IDUwMCAxMTggNDcwIFoiIGZpbGw9IiM0RjdBNTIiIGNsaXAtcGF0aD0idXJsKCNjaXJjbGVDbGlwKSIvPgoKICA8IS0tIEd1YXJkaWFuIGZpZ3VyZSAobW90aGVyKSDigJQgc2hlbHRlcmluZyBhcmNoIC0tPgogIDxnIGZpbGw9IiMxRTJBNEEiPgogICAgPCEtLSBoZWFkIC0tPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjIyIiByPSIzMCIvPgogICAgPCEtLSBzaGVsdGVyaW5nIGFybXMvY2xvYWsgZm9ybWluZyBwcm90ZWN0aXZlIGFyY2ggb3ZlciBjaGlsZCAtLT4KICAgIDxwYXRoIGQ9Ik0gMjU2IDI1MAogICAgICAgICAgICAgQyAxNzYgMjUwIDE1MCAzMjAgMTUwIDQwMAogICAgICAgICAgICAgTCAxNTAgNDMwCiAgICAgICAgICAgICBMIDE5NCA0MzAKICAgICAgICAgICAgIEwgMTk0IDQwMAogICAgICAgICAgICAgQyAxOTQgMzQ0IDIxNiAzMDAgMjU2IDI5NgogICAgICAgICAgICAgQyAyOTYgMzAwIDMxOCAzNDQgMzE4IDQwMAogICAgICAgICAgICAgTCAzMTggNDMwCiAgICAgICAgICAgICBMIDM2MiA0MzAKICAgICAgICAgICAgIEwgMzYyIDQwMAogICAgICAgICAgICAgQyAzNjIgMzIwIDMzNiAyNTAgMjU2IDI1MCBaIi8+CiAgPC9nPgoKICA8IS0tIENoaWxkIGZpZ3VyZSBzaGVsdGVyZWQgd2l0aGluIC0tPgogIDxnIGZpbGw9IiNGQkY4RjEiPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzUyIiByPSIxNyIvPgogICAgPHBhdGggZD0iTSAyNTYgMzcwIEMgMjM0IDM3MCAyMjQgMzkyIDIyNCA0MTYgTCAyMjQgNDMwIEwgMjg4IDQzMCBMIDI4OCA0MTYgQyAyODggMzkyIDI3OCAzNzAgMjU2IDM3MCBaIi8+CiAgPC9nPgoKICA8IS0tIEFkaXJlIGNsb3RoIGRvdCBhcmMsIHJlZmVyZW5jaW5nIGluZGlnbyB0ZXh0aWxlIHBhdHRlcm4gLS0+CiAgPGcgZmlsbD0iI0I4NUMzNiI+CiAgICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIxODIiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMTg2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjEzMCIgcj0iNS41Ii8+CiAgICA8Y2lyY2xlIGN4PSIyOTQiIGN5PSIxMzAiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMzI2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjM1MiIgY3k9IjE4MiIgcj0iNS41Ii8+CiAgPC9nPgoKICA8IS0tIE91dGVyIHJpbmcsIHN0aXRjaGVkIGNsb3RoLWVkZ2Ugc3R5bGUgLS0+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSI3Ii8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgNyIgb3BhY2l0eT0iLjU1Ii8+Cjwvc3ZnPgo=" alt="RICWEI emblem" class="logo-mark-img">
+        <div class="logo-text">
+          <strong>RICWEI</strong>
+          <span>Rural Impact Initiative</span>
+        </div>
+      </a>
+      <nav class="nav-menu">
+        <ul><li><a href="index.html" class="active">Home</a></li><li>
+        <a href="#" class="">Who We Are <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="">
+          <a href="about.html">About Us<small>Our story, mission & values</small></a><a href="about.html#objectives">Constitutional Objectives<small>What we’re set up to achieve</small></a><a href="about.html#board">Board of Trustees<small>Meet our leadership</small></a><a href="gallery.html">Gallery<small>Moments from our work</small></a><a href="get-involved.html#faq">FAQs<small>Common questions, answered</small></a>
+        </div>
+      </li><li>
+        <a href="#" class="">Our Programs <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="columns:2;column-gap:6px;width:520px;">
+          <a href="causes.html#economic-empowerment">Women Economic Empowerment Program<small>Empowerment</small></a><a href="causes.html#scholarship-scheme">Back-to-School & Scholarship Scheme<small>Education</small></a><a href="causes.html#maternal-child-health">Maternal & Child Health Initiative<small>Healthcare</small></a><a href="causes.html#end-harmful-practices">End Harmful Practices Campaign<small>Advocacy</small></a><a href="causes.html#leadership-academy">Women & Youth Leadership Academy<small>Leadership</small></a><a href="causes.html#agriculture-food-security">Sustainable Agriculture & Food Security<small>Agriculture</small></a><a href="causes.html#capacity-building">Community Capacity Building Initiative<small>Capacity Building</small></a>
+        </div>
+      </li><li><a href="events.html" class="">News & Events</a></li><li>
+        <a href="#" class="">Get Involved <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="">
+          <a href="get-involved.html">Volunteer<small>Give your time and skills</small></a><a href="get-involved.html#partner">Partner With Us<small>Institutional collaboration</small></a><a href="contact.html">Careers<small>Reach out about opportunities</small></a>
+        </div>
+      </li><li><a href="contact.html" class="">Contact</a></li></ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="donate.html" class="btn-donate-nav"><span class="label">Donate</span> <i class="fas fa-heart"></i></a>
+        <div class="mobile-menu-btn" aria-label="Open menu"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <span class="close-drawer" role="button" aria-label="Close menu"><i class="fas fa-times"></i></span>
+    <ul><li><a href="index.html" class="active">Home</a></li><li>
+        <a href="about.html" class="">Who We Are</a>
+        <ul class="sub"><li><a href="about.html">About Us</a></li><li><a href="about.html#objectives">Constitutional Objectives</a></li><li><a href="about.html#board">Board of Trustees</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="get-involved.html#faq">FAQs</a></li></ul>
+      </li><li>
+        <a href="causes.html#economic-empowerment" class="">Our Programs</a>
+        <ul class="sub"><li><a href="causes.html#economic-empowerment">Women Economic Empowerment Program</a></li><li><a href="causes.html#scholarship-scheme">Back-to-School & Scholarship Scheme</a></li><li><a href="causes.html#maternal-child-health">Maternal & Child Health Initiative</a></li><li><a href="causes.html#end-harmful-practices">End Harmful Practices Campaign</a></li><li><a href="causes.html#leadership-academy">Women & Youth Leadership Academy</a></li><li><a href="causes.html#agriculture-food-security">Sustainable Agriculture & Food Security</a></li><li><a href="causes.html#capacity-building">Community Capacity Building Initiative</a></li></ul>
+      </li><li><a href="events.html" class="">News & Events</a></li><li>
+        <a href="get-involved.html" class="">Get Involved</a>
+        <ul class="sub"><li><a href="get-involved.html">Volunteer</a></li><li><a href="get-involved.html#partner">Partner With Us</a></li><li><a href="contact.html">Careers</a></li></ul>
+      </li><li><a href="contact.html" class="">Contact</a></li></ul>
+    <a href="donate.html" class="btn btn-gold btn-block" style="margin-top:24px;">Donate Now <i class="fas fa-heart"></i></a>
+  </div>
+  
+  
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="floating-motifs" aria-hidden="true">
+      <i class="fas fa-leaf motif motif-1"></i>
+      <i class="fas fa-seedling motif motif-2"></i>
+      <span class="motif motif-3"></span>
+      <i class="fas fa-dove motif motif-4"></i>
+      <span class="motif motif-5"></span>
+      <span class="motif motif-6"></span>
+    </div>
+    <div class="container">
+      <div>
+        <p class="hero-tagline">Empowering Rural Communities Since 2026</p>
+        <h1>Building Hope for <em>Women &amp; Children</em> in Rural Nigeria</h1>
+        <p class="hero-desc">RICWEI is dedicated to transforming the lives of rural women, adolescent girls, and children through education, healthcare, vocational training, and advocacy across Benue State and beyond.</p>
+        <div class="hero-buttons">
+          <a href="donate.html" class="btn btn-gold">Donate Now <i class="fas fa-arrow-right"></i></a>
+          <a href="about.html" class="btn btn-outline-light">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame kenburns-frame">
+          <img class="kb-slide active" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Rural woman and child in Benue State, Nigeria">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800" alt="Rural women in vocational empowerment training">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800" alt="Women learning tailoring and craft skills">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800" alt="Sustainable agriculture and food security in rural Nigeria">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800" alt="Maternal and child healthcare outreach">
+        </div>
+        <div class="hero-stat-chip"><strong>7</strong><span>Flagship Programs</span></div>
+        <div class="hero-badge">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <strong>Incorporated Trustee</strong>
+          <span>CAC/IT/9430700 &middot; est. 21 March 2026</span>
+        </div>
+      </div>
+    </div>
+    <a href="#welcome" class="scroll-indicator" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <section class="section" id="welcome">
+    <div class="container welcome-grid">
+      <div class="welcome-image reveal">
+        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700" alt="Rural women empowerment training">
+        <div class="experience-badge"><strong>Est. 2026</strong><span>CAC/IT/9430700</span></div>
+        <i class="fas fa-leaf motif" style="top:-16px; right:38px; font-size:1.4rem; color:var(--harvest-gold); opacity:.55; animation: drift1 8s ease-in-out infinite;" aria-hidden="true"></i>
+      </div>
+      <div class="welcome-text reveal">
+        <p class="eyebrow">Welcome to RICWEI</p>
+        <h2>Together We Can Create Lasting Change</h2>
+        <p>Rural Impact for Children and Women Empowerment Initiative (RICWEI) is a not-for-profit, non-political organization incorporated on 21 March 2026 under the Companies and Allied Matters Act, CAP C20 LFN 2004. We work to promote the economic empowerment of rural women and adolescent girls, improve access to quality education and healthcare, and advocate for policies that advance gender equality and social inclusion.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Vocational training &amp; entrepreneurship development</li>
+          <li><i class="fas fa-check-circle"></i> Maternal &amp; child health interventions</li>
+          <li><i class="fas fa-check-circle"></i> Scholarships for indigent pupils</li>
+          <li><i class="fas fa-check-circle"></i> Community leadership &amp; rights-based education</li>
+        </ul>
+        <a href="about.html" class="stitch-link">Read Our Story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow on-dark">What We Stand For</p>
+        <h2>Our Mission, Vision &amp; Values</h2>
+        <p class="lede">Driven by purpose, guided by integrity, and powered by community.</p>
+      </div>
+      <div class="mvv-grid reveal-stagger">
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-bullseye"></i></div><h3>Our Mission</h3><p>To empower rural women, adolescents, and children through vocational training, entrepreneurship development, education, healthcare access, and policy advocacy that promotes gender equality and social inclusion.</p></div>
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-eye"></i></div><h3>Our Vision</h3><p>A Nigeria where every rural woman and child lives with dignity, has access to quality education and healthcare, and enjoys equal opportunity to thrive.</p></div>
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-heart"></i></div><h3>Our Values</h3><p>Integrity, Inclusion, Empowerment, Sustainability, Collaboration, Respect for Human Dignity.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-millet">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Our Programs</p>
+        <h2>Causes We Champion</h2>
+        <p class="lede">Seven interconnected focus areas drive our work across rural Nigerian communities.</p>
+      </div>
+      <div class="causes-grid reveal-stagger">
+        <div class="cause-card reveal" id="economic-empowerment">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700');"><span class="cause-tag">Empowerment</span></div>
+    <div class="cause-content">
+      <h3>Women Economic Empowerment Program</h3>
+      <p>Skills acquisition in tailoring, catering, soap-making, and beadwork, with micro-grants and cooperative formation to sustain livelihoods.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="scholarship-scheme">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700');"><span class="cause-tag">Education</span></div>
+    <div class="cause-content">
+      <h3>Back-to-School & Scholarship Scheme</h3>
+      <p>Scholarships, learning materials, and school infrastructure support for indigent pupils in rural Benue communities.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="maternal-child-health">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=700');"><span class="cause-tag">Healthcare</span></div>
+    <div class="cause-content">
+      <h3>Maternal & Child Health Initiative</h3>
+      <p>Antenatal care support, immunization drives, nutrition education, and community health worker training.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="end-harmful-practices">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700');"><span class="cause-tag">Advocacy</span></div>
+    <div class="cause-content">
+      <h3>End Harmful Practices Campaign</h3>
+      <p>Community dialogues, sensitization campaigns, and rights-based education to end child marriage, GBV, and inheritance denial.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="leadership-academy">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=700');"><span class="cause-tag">Leadership</span></div>
+    <div class="cause-content">
+      <h3>Women & Youth Leadership Academy</h3>
+      <p>Capacity-building workshops on civic participation, governance, public speaking, and project management.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="agriculture-food-security">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=700');"><span class="cause-tag">Agriculture</span></div>
+    <div class="cause-content">
+      <h3>Sustainable Agriculture & Food Security</h3>
+      <p>Training in climate-smart agriculture, access to improved seedlings, and farmer cooperatives for rural women.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+      </div>
+      <div style="text-align:center;margin-top:44px;">
+        <a href="causes.html" class="btn btn-outline-dark">Explore All Programs <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid reveal-stagger">
+        <div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-users" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="500">0</h2>
+          <p>Women Empowered</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-child" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="300">0</h2>
+          <p>Children Supported</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-school" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="15">0</h2>
+          <p>Rural Schools Reached</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-handshake" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="10">0</h2>
+          <p>Community Partners</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Become a Volunteer or Partner With Us</h2>
+        <p>Your time, skills, and resources can transform lives. Join our mission to empower rural communities today.</p>
+        <div class="cta-buttons">
+          <a href="donate.html" class="btn btn-white">Donate Now</a>
+          <a href="get-involved.html" class="btn btn-outline-light">Volunteer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow">Our Leadership</p>
+        <h2>Board of Trustees</h2>
+        <p class="lede">Five dedicated trustees governing our affairs with integrity and passion.</p>
+      </div>
+      <div class="team-grid reveal-stagger">
+        <div class="team-card reveal">
+          <div class="team-img"><img src="https://i.pravatar.cc/400?img=12" alt="Iornumbe Joseph Usar"></div>
+          <h3>Iornumbe Joseph Usar</h3><p class="role">Chairman, Board of Trustees</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="https://i.pravatar.cc/400?img=33" alt="Doolumun Philip Apuu"></div>
+          <h3>Doolumun Philip Apuu</h3><p class="role">Trustee</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="https://i.pravatar.cc/400?img=15" alt="Iorhemen Desmond Abi"></div>
+          <h3>Iorhemen Desmond Abi</h3><p class="role">Trustee</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="https://i.pravatar.cc/400?img=47" alt="Kaneng Adamu Pwol"></div>
+          <h3>Kaneng Adamu Pwol</h3><p class="role">Trustee</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="https://i.pravatar.cc/400?img=60" alt="Terna Samuel Iombor"></div>
+          <h3>Terna Samuel Iombor</h3><p class="role">Trustee Secretary</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="about.html#board" class="btn btn-outline-dark">Meet the Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow on-dark">In Their Words</p>
+        <h2>Voices From Our Community</h2>
+      </div>
+      <div class="testimonial-slider">
+    <button class="t-arrow prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+    <div class="testimonial-track">
+      <div class="testimonial-slides">
+        <div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a direct quote from a beneficiary once the first training cohort graduates.</p>
+            <div class="who"><strong>Beneficiary name</strong><span>Vocational Training Cohort 1</span></div>
+          </div>
+        </div><div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a quote from a community or traditional leader RICWEI has partnered with.</p>
+            <div class="who"><strong>Community partner name</strong><span>Community leader, Benue State</span></div>
+          </div>
+        </div><div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a quote from a scholarship recipient or their guardian.</p>
+            <div class="who"><strong>Guardian / pupil name</strong><span>Back-to-School & Scholarship Scheme</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="t-arrow next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+    <div class="t-nav"></div>
+  </div>
+    </div>
+  </section>
+
+  <section class="section on-parchment">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Latest Updates</p>
+        <h2>News &amp; Stories</h2>
+        <p class="lede">Stay informed about our impact and the communities we serve.</p>
+      </div>
+      <div class="news-grid reveal-stagger">
+        <div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Programs</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> March 25, 2026</span>
+      <h3>RICWEI Officially Launches Operations in Benue State</h3>
+      <p>Following our incorporation under CAC/IT/9430700, we are excited to begin our empowerment programs across rural communities.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Incorporation</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> March 21, 2026</span>
+      <h3>Incorporation: A New Chapter for Rural Empowerment</h3>
+      <p>RICWEI was officially registered with the Corporate Affairs Commission as an Incorporated Trustee on the 21st of March, 2026.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Empowerment</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> Upcoming</span>
+      <h3>Vocational Training Cohort 1 — Call for Applications</h3>
+      <p>Our first cohort of vocational skills training for rural women and adolescent girls opens soon.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="events.html" class="btn btn-outline-dark">More Updates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container">
+      <p class="eyebrow" style="justify-content:center;display:flex;">Trusted Collaboration</p>
+      <h2 style="text-align:center;margin-bottom:40px;">Organizations We’re Building With</h2>
+      <div class="partners-grid">
+        <div class="partner-logo">Partner logo 1<br><span style="font-size:.65rem;opacity:.7;">add on partnership</span></div><div class="partner-logo">Partner logo 2<br><span style="font-size:.65rem;opacity:.7;">add on partnership</span></div><div class="partner-logo">Partner logo 3<br><span style="font-size:.65rem;opacity:.7;">add on partnership</span></div><div class="partner-logo">Partner logo 4<br><span style="font-size:.65rem;opacity:.7;">add on partnership</span></div><div class="partner-logo">Partner logo 5<br><span style="font-size:.65rem;opacity:.7;">add on partnership</span></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div>
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Get program updates, impact stories, and volunteer opportunities in your inbox.</p>
+        </div>
+        <form class="newsletter-form" data-validate>
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN1bkdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0M2OEYyQSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNEE5M0EiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImNpcmNsZUNsaXAiPgogICAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjIyOCIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+CgogIDwhLS0gQmFzZSBkaXNjIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjI4IiBmaWxsPSIjRkJGOEYxIi8+CgogIDwhLS0gUmlzaW5nIHN1biBhcmNzLCBjbGlwcGVkIHRvIGRpc2MgLS0+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NpcmNsZUNsaXApIj4KICAgIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5MiIgcj0iMTUwIiBmaWxsPSJ1cmwoI3N1bkdyYWQpIi8+CiAgICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzOTIiIHI9IjExMiIgZmlsbD0iI0Y2RUVEQyIvPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzkyIiByPSIxMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIuNSIvPgogICAgPCEtLSBzdW4gcmF5cyAtLT4KICAgIDxnIHN0cm9rZT0iI0U0QTkzQSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii44NSI+CiAgICAgIDxsaW5lIHgxPSIyNTYiIHkxPSIyMTYiIHgyPSIyNTYiIHkyPSIyNDQiLz4KICAgICAgPGxpbmUgeDE9IjE3NiIgeTE9IjI0OCIgeDI9IjE5OCIgeTI9IjI2MiIvPgogICAgICA8bGluZSB4MT0iMzM2IiB5MT0iMjQ4IiB4Mj0iMzE0IiB5Mj0iMjYyIi8+CiAgICAgIDxsaW5lIHgxPSIxMzAiIHkxPSIzMTAiIHgyPSIxNTgiIHkyPSIzMTIiLz4KICAgICAgPGxpbmUgeDE9IjM4MiIgeTE9IjMxMCIgeDI9IjM1NCIgeTI9IjMxMiIvPgogICAgPC9nPgogIDwvZz4KCiAgPCEtLSBNb3NzIGdyb3VuZCBtb3VuZCAtLT4KICA8cGF0aCBkPSJNIDExOCA0MzAgUSAyNTYgMzcyIDM5NCA0MzAgTCAzOTQgNDcwIFEgMjU2IDUwMCAxMTggNDcwIFoiIGZpbGw9IiM0RjdBNTIiIGNsaXAtcGF0aD0idXJsKCNjaXJjbGVDbGlwKSIvPgoKICA8IS0tIEd1YXJkaWFuIGZpZ3VyZSAobW90aGVyKSDigJQgc2hlbHRlcmluZyBhcmNoIC0tPgogIDxnIGZpbGw9IiMxRTJBNEEiPgogICAgPCEtLSBoZWFkIC0tPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjIyIiByPSIzMCIvPgogICAgPCEtLSBzaGVsdGVyaW5nIGFybXMvY2xvYWsgZm9ybWluZyBwcm90ZWN0aXZlIGFyY2ggb3ZlciBjaGlsZCAtLT4KICAgIDxwYXRoIGQ9Ik0gMjU2IDI1MAogICAgICAgICAgICAgQyAxNzYgMjUwIDE1MCAzMjAgMTUwIDQwMAogICAgICAgICAgICAgTCAxNTAgNDMwCiAgICAgICAgICAgICBMIDE5NCA0MzAKICAgICAgICAgICAgIEwgMTk0IDQwMAogICAgICAgICAgICAgQyAxOTQgMzQ0IDIxNiAzMDAgMjU2IDI5NgogICAgICAgICAgICAgQyAyOTYgMzAwIDMxOCAzNDQgMzE4IDQwMAogICAgICAgICAgICAgTCAzMTggNDMwCiAgICAgICAgICAgICBMIDM2MiA0MzAKICAgICAgICAgICAgIEwgMzYyIDQwMAogICAgICAgICAgICAgQyAzNjIgMzIwIDMzNiAyNTAgMjU2IDI1MCBaIi8+CiAgPC9nPgoKICA8IS0tIENoaWxkIGZpZ3VyZSBzaGVsdGVyZWQgd2l0aGluIC0tPgogIDxnIGZpbGw9IiNGQkY4RjEiPgogICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzUyIiByPSIxNyIvPgogICAgPHBhdGggZD0iTSAyNTYgMzcwIEMgMjM0IDM3MCAyMjQgMzkyIDIyNCA0MTYgTCAyMjQgNDMwIEwgMjg4IDQzMCBMIDI4OCA0MTYgQyAyODggMzkyIDI3OCAzNzAgMjU2IDM3MCBaIi8+CiAgPC9nPgoKICA8IS0tIEFkaXJlIGNsb3RoIGRvdCBhcmMsIHJlZmVyZW5jaW5nIGluZGlnbyB0ZXh0aWxlIHBhdHRlcm4gLS0+CiAgPGcgZmlsbD0iI0I4NUMzNiI+CiAgICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIxODIiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMTg2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjIxOCIgY3k9IjEzMCIgcj0iNS41Ii8+CiAgICA8Y2lyY2xlIGN4PSIyOTQiIGN5PSIxMzAiIHI9IjUuNSIvPgogICAgPGNpcmNsZSBjeD0iMzI2IiBjeT0iMTUyIiByPSI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjM1MiIgY3k9IjE4MiIgcj0iNS41Ii8+CiAgPC9nPgoKICA8IS0tIE91dGVyIHJpbmcsIHN0aXRjaGVkIGNsb3RoLWVkZ2Ugc3R5bGUgLS0+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSI3Ii8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFMkE0QSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgNyIgb3BhY2l0eT0iLjU1Ii8+Cjwvc3ZnPgo=" alt="RICWEI emblem" class="logo-mark-img">
+            <strong>RICWEI</strong>
+          </div>
+          <p>Rural Impact for Children and Women Empowerment Initiative — empowering rural women, adolescents, and children across Nigeria through sustainable, community-driven programs.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="causes.html">Our Programs</a></li>
+            <li><a href="events.html">News & Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+            <li><a href="get-involved.html#partner">Partner With Us</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="get-involved.html#faq">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> 9, Okada Chairman Street, Behind Bahaus Construction, Off Yaikyor New Road, Makurdi/Aliade, Benue State, Nigeria</li>
+            <li><i class="fas fa-phone"></i> +234 706 491 6811</li>
+            <li><i class="fas fa-envelope"></i> royceyter6@gmail.com</li>
+            <li><i class="fas fa-certificate"></i> CAC/IT/9430700</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rural Impact for Children and Women Empowerment Initiative (RICWEI). All Rights Reserved.</p>
+        <p>Incorporated Trustee — Federal Republic of Nigeria <a href="#">Privacy</a> <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+  <script>
+/* =========================================================================
+   RICWEI — site interactivity (vanilla JS, no dependencies)
+   ========================================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- Welcome intro overlay -------------------------------------- */
+  var welcomeOverlay = document.getElementById('welcomeOverlay');
+  if (welcomeOverlay) {
+    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var alreadyWelcomed = false;
+    try { alreadyWelcomed = sessionStorage.getItem('ricweiWelcomed') === '1'; } catch (e) { /* storage unavailable, ignore */ }
+
+    var dismissTimer;
+
+    function closeWelcome (immediate) {
+      clearTimeout(dismissTimer);
+      document.body.classList.remove('welcome-active');
+      try { sessionStorage.setItem('ricweiWelcomed', '1'); } catch (e) { /* ignore */ }
+      if (immediate) {
+        welcomeOverlay.remove();
+        return;
+      }
+      welcomeOverlay.classList.add('leaving');
+      welcomeOverlay.addEventListener('animationend', function () {
+        if (welcomeOverlay.parentNode) welcomeOverlay.remove();
+      }, { once: true });
+    }
+
+    if (prefersReducedMotion || alreadyWelcomed) {
+      // Skip the intro instantly — respects reduced-motion preference and
+      // avoids replaying on every page within the same browsing session.
+      closeWelcome(true);
+    } else {
+      welcomeOverlay.classList.add('auto-leaving');
+      dismissTimer = setTimeout(function () { closeWelcome(false); }, 4100);
+      welcomeOverlay.addEventListener('animationend', function (e) {
+        if (e.target === welcomeOverlay) closeWelcome(true);
+      });
+
+      var skipBtn = document.getElementById('welcomeSkip');
+      if (skipBtn) skipBtn.addEventListener('click', function () { closeWelcome(false); });
+      welcomeOverlay.addEventListener('click', function (e) {
+        if (e.target === welcomeOverlay || e.target.classList.contains('welcome-overlay-bg')) closeWelcome(false);
+      });
+      document.addEventListener('keydown', function onKey (e) {
+        if (e.key === 'Escape') { closeWelcome(false); document.removeEventListener('keydown', onKey); }
+      });
+    }
+  }
+
+  /* ---------- Hero Ken Burns slideshow ------------------------------------ */
+  var kbFrame = document.querySelector('.kenburns-frame');
+  if (kbFrame) {
+    var kbSlides = kbFrame.querySelectorAll('.kb-slide');
+    var kbIndex = 0;
+    if (kbSlides.length > 1) {
+      setInterval(function () {
+        kbSlides[kbIndex].classList.remove('active');
+        kbIndex = (kbIndex + 1) % kbSlides.length;
+        kbSlides[kbIndex].classList.add('active');
+      }, 5000);
+    }
+  }
+
+  /* ---------- Mobile drawer menu ---------------------------------------- */
+  var menuBtn = document.querySelector('.mobile-menu-btn');
+  var drawer = document.querySelector('.mobile-drawer');
+  var backdrop = document.querySelector('.mobile-drawer-backdrop');
+  var closeDrawerBtn = document.querySelector('.close-drawer');
+
+  function openDrawer () {
+    if (!drawer) return;
+    drawer.classList.add('open');
+    backdrop.classList.add('show');
+    menuBtn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer () {
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    backdrop.classList.remove('show');
+    menuBtn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function () {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+  }
+  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  /* ---------- Sticky nav shadow on scroll -------------------------------- */
+  var navbar = document.querySelector('.navbar');
+  function onScrollNav () {
+    if (!navbar) return;
+    if (window.scrollY > 12) navbar.style.boxShadow = '0 10px 30px -18px rgba(18,24,43,0.35)';
+    else navbar.style.boxShadow = 'none';
+  }
+  window.addEventListener('scroll', onScrollNav, { passive: true });
+  onScrollNav();
+
+  /* ---------- Back to top -------------------------------------------------- */
+  var backToTop = document.querySelector('.back-to-top');
+  function onScrollTop () {
+    if (!backToTop) return;
+    backToTop.classList.toggle('show', window.scrollY > 500);
+  }
+  window.addEventListener('scroll', onScrollTop, { passive: true });
+  onScrollTop();
+
+  /* ---------- Scroll reveal ------------------------------------------------ */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Stat counters ------------------------------------------------- */
+  var counters = document.querySelectorAll('.counter');
+  function animateCounter (el) {
+    var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    var duration = 1600;
+    var start = null;
+    function step (ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + (el.getAttribute('data-suffix') || '');
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window && counters.length) {
+    var cIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          cIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { cIo.observe(el); });
+  }
+
+  /* ---------- Testimonial slider -------------------------------------------- */
+  var slider = document.querySelector('.testimonial-slider');
+  if (slider) {
+    var track = slider.querySelector('.testimonial-slides');
+    var slides = slider.querySelectorAll('.t-slide');
+    var dotsWrap = slider.querySelector('.t-nav');
+    var prevBtn = slider.querySelector('.t-arrow.prev');
+    var nextBtn = slider.querySelector('.t-arrow.next');
+    var idx = 0;
+    var timer;
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 't-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.t-dot');
+
+    function goTo (i) {
+      idx = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function (d, di) { d.classList.toggle('active', di === idx); });
+    }
+    function resetTimer () {
+      clearInterval(timer);
+      timer = setInterval(function () { goTo(idx + 1); }, 6500);
+    }
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(idx - 1); resetTimer(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(idx + 1); resetTimer(); });
+    resetTimer();
+  }
+
+  /* ---------- FAQ accordion --------------------------------------------------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      item.closest('.faq-list').querySelectorAll('.faq-item').forEach(function (other) {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ---------- Program / gallery filter tabs ------------------------------------ */
+  document.querySelectorAll('[data-filter-group]').forEach(function (group) {
+    var tabs = group.querySelectorAll('.filter-tab');
+    var targetSelector = group.getAttribute('data-filter-group');
+    var items = document.querySelectorAll(targetSelector);
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        var cat = tab.getAttribute('data-cat');
+        items.forEach(function (item) {
+          var match = cat === 'all' || item.getAttribute('data-cat') === cat;
+          item.style.display = match ? '' : 'none';
+        });
+      });
+    });
+  });
+
+  /* ---------- Donate: frequency toggle + amount + dynamic impact --------------- */
+  var donateForm = document.querySelector('.donate-form');
+  if (donateForm) {
+    var freqBtns = donateForm.querySelectorAll('.freq-toggle button');
+    var amountInputs = donateForm.querySelectorAll('.amount-options input');
+    var customAmount = donateForm.querySelector('.custom-amount');
+    var impactPreview = donateForm.querySelector('.impact-preview span');
+    var frequency = 'once';
+
+    freqBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        freqBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        frequency = btn.getAttribute('data-freq');
+        updateImpact();
+      });
+    });
+
+    function currentAmount () {
+      var checked = donateForm.querySelector('.amount-options input:checked');
+      if (checked && checked.value !== 'custom') return parseInt(checked.value, 10);
+      if (customAmount && customAmount.value) return parseInt(customAmount.value, 10) || 0;
+      return 0;
+    }
+
+    function updateImpact () {
+      if (!impactPreview) return;
+      var amt = currentAmount();
+      var freqLabel = frequency === 'monthly' ? 'every month' : frequency === 'yearly' ? 'every year' : 'as a one-time gift';
+      if (!amt) {
+        impactPreview.innerHTML = 'Choose an amount to see your impact.';
+        return;
+      }
+      var msg;
+      if (amt >= 100000) msg = 'covers a full year\u2019s scholarship for one indigent pupil';
+      else if (amt >= 50000) msg = 'supports a community maternal health outreach';
+      else if (amt >= 25000) msg = 'funds learning materials for 5 pupils for a school term';
+      else if (amt >= 10000) msg = 'sponsors vocational training supplies for 3 women';
+      else msg = 'helps provide learning materials for a pupil in need';
+      impactPreview.innerHTML = '<strong>\u20a6' + amt.toLocaleString() + '</strong> given ' + freqLabel + ' ' + msg + '.';
+    }
+    amountInputs.forEach(function (input) { input.addEventListener('change', updateImpact); });
+    if (customAmount) customAmount.addEventListener('input', function () {
+      amountInputs.forEach(function (i) { if (i.value === 'custom') i.checked = true; });
+      updateImpact();
+    });
+    updateImpact();
+  }
+
+  /* ---------- Generic form validation ------------------------------------------- */
+  document.querySelectorAll('form[data-validate]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function (field) {
+        var errorEl = field.parentElement.querySelector('.field-error');
+        var fieldValid = true;
+        if (field.type === 'email') {
+          fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+        } else if (field.type === 'checkbox') {
+          fieldValid = field.checked;
+        } else {
+          fieldValid = field.value.trim().length > 0;
+        }
+        field.classList.toggle('field-invalid', !fieldValid);
+        if (!fieldValid) valid = false;
+      });
+      var successEl = form.querySelector('.form-success');
+      if (valid) {
+        if (successEl) successEl.style.display = 'block';
+        form.reset();
+        form.querySelectorAll('.field-invalid').forEach(function (f) { f.classList.remove('field-invalid'); });
+        if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        var firstInvalid = form.querySelector('.field-invalid');
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+  });
+
+});
+
+</script>
+</body>
+</html>

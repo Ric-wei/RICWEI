@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICWEI | Rural Impact for Children and Women Empowerment Initiative</title>
+    <meta name="description" content="RICWEI empowers rural women and children in Benue State, Nigeria through education, healthcare, vocational training, and advocacy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="welcome-active">
+
+  <div class="welcome-overlay" id="welcomeOverlay" role="dialog" aria-label="Welcome to RICWEI">
+    <div class="welcome-overlay-bg"></div>
+    <div class="welcome-glow"></div>
+    <div class="welcome-content">
+      <img src="images/logo/ricwei-mark.svg" alt="RICWEI emblem" class="welcome-mark">
+      <p class="welcome-eyebrow">Rural Impact for Children &amp; Women Empowerment Initiative</p>
+      <h1 class="welcome-title">Welcome to <em>RICWEI</em></h1>
+      <p class="welcome-sub">Building hope for rural women, adolescent girls, and children across Benue State, Nigeria — one community at a time.</p>
+      <button type="button" class="welcome-skip" id="welcomeSkip">Enter Site <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="welcome-progress"><span></span></div>
+  </div>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="top-bar-content" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;width:100%;">
+        <div class="contact-info">
+          <a href="mailto:info@ricwei.org.ng"><i class="fas fa-envelope"></i> info@ricwei.org.ng</a>
+          <a href="tel:+2347064916811"><i class="fas fa-phone"></i> +234 706 491 6811</a>
+          <span style="opacity:.6;">CAC/IT/9430700</span>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo/ricwei-mark.svg" alt="RICWEI emblem" class="logo-mark-img">
+        <div class="logo-text">
+          <strong>RICWEI</strong>
+          <span>Rural Impact Initiative</span>
+        </div>
+      </a>
+      <nav class="nav-menu">
+        <ul><li><a href="index.html" class="">Home</a></li><li>
+        <a href="#" class="active">Who We Are <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="">
+          <a href="about.html">About Us<small>Our story, mission & values</small></a><a href="about.html#objectives">Constitutional Objectives<small>What we’re set up to achieve</small></a><a href="about.html#board">Board of Trustees<small>Meet our leadership</small></a><a href="about.html#staff" style="color:#0d6efd;">Our Staff<small style="color:#0d6efd;">The team behind our programs</small></a><a href="gallery.html">Gallery<small>Moments from our work</small></a><a href="get-involved.html#faq">FAQs<small>Common questions, answered</small></a>
+        </div>
+      </li><li>
+        <a href="#" class="">Our Programs <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="columns:2;column-gap:6px;width:520px;">
+          <a href="causes.html#economic-empowerment">Women Economic Empowerment Program<small>Empowerment</small></a><a href="causes.html#scholarship-scheme">Back-to-School & Scholarship Scheme<small>Education</small></a><a href="causes.html#maternal-child-health">Maternal & Child Health Initiative<small>Healthcare</small></a><a href="causes.html#end-harmful-practices">End Harmful Practices Campaign<small>Advocacy</small></a><a href="causes.html#leadership-academy">Women & Youth Leadership Academy<small>Leadership</small></a><a href="causes.html#agriculture-food-security">Sustainable Agriculture & Food Security<small>Agriculture</small></a><a href="causes.html#capacity-building">Community Capacity Building Initiative<small>Capacity Building</small></a>
+        </div>
+      </li><li><a href="events.html" class="">News & Events</a></li><li>
+        <a href="#" class="">Get Involved <i class="fas fa-chevron-down caret"></i></a>
+        <div class="mega" style="">
+          <a href="get-involved.html">Volunteer<small>Give your time and skills</small></a><a href="get-involved.html#partner">Partner With Us<small>Institutional collaboration</small></a><a href="contact.html">Careers<small>Reach out about opportunities</small></a>
+        </div>
+      </li><li><a href="contact.html" class="">Contact</a></li></ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="donate.html" class="btn-donate-nav"><span class="label">Donate</span> <i class="fas fa-heart"></i></a>
+        <div class="mobile-menu-btn" aria-label="Open menu"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <span class="close-drawer" role="button" aria-label="Close menu"><i class="fas fa-times"></i></span>
+    <ul><li><a href="index.html" class="active">Home</a></li><li>
+        <a href="about.html" class="">Who We Are</a>
+        <ul class="sub"><li><a href="about.html">About Us</a></li><li><a href="about.html#objectives">Constitutional Objectives</a></li><li><a href="about.html#board">Board of Trustees</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="get-involved.html#faq">FAQs</a></li></ul>
+      </li><li>
+        <a href="causes.html#economic-empowerment" class="">Our Programs</a>
+        <ul class="sub"><li><a href="causes.html#economic-empowerment">Women Economic Empowerment Program</a></li><li><a href="causes.html#scholarship-scheme">Back-to-School & Scholarship Scheme</a></li><li><a href="causes.html#maternal-child-health">Maternal & Child Health Initiative</a></li><li><a href="causes.html#end-harmful-practices">End Harmful Practices Campaign</a></li><li><a href="causes.html#leadership-academy">Women & Youth Leadership Academy</a></li><li><a href="causes.html#agriculture-food-security">Sustainable Agriculture & Food Security</a></li><li><a href="causes.html#capacity-building">Community Capacity Building Initiative</a></li></ul>
+      </li><li><a href="events.html" class="">News & Events</a></li><li>
+        <a href="get-involved.html" class="">Get Involved</a>
+        <ul class="sub"><li><a href="get-involved.html">Volunteer</a></li><li><a href="get-involved.html#partner">Partner With Us</a></li><li><a href="contact.html">Careers</a></li></ul>
+      </li><li><a href="contact.html" class="">Contact</a></li></ul>
+    <a href="donate.html" class="btn btn-gold btn-block" style="margin-top:24px;">Donate Now <i class="fas fa-heart"></i></a>
+  </div>
+  
+  
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="floating-motifs" aria-hidden="true">
+      <i class="fas fa-leaf motif motif-1"></i>
+      <i class="fas fa-seedling motif motif-2"></i>
+      <span class="motif motif-3"></span>
+      <i class="fas fa-dove motif motif-4"></i>
+      <span class="motif motif-5"></span>
+      <span class="motif motif-6"></span>
+    </div>
+    <div class="container">
+      <div>
+        <p class="hero-tagline">Empowering Rural Communities Since 2026</p>
+        <h1>Building Hope for <em>Women &amp; Children</em> in Rural Nigeria</h1>
+        <p class="hero-desc">RICWEI is dedicated to transforming the lives of rural women, adolescent girls, and children through education, healthcare, vocational training, and advocacy across Benue State and beyond.</p>
+        <div class="hero-buttons">
+          <a href="donate.html" class="btn btn-gold">Donate Now <i class="fas fa-arrow-right"></i></a>
+          <a href="about.html" class="btn btn-outline-light">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame kenburns-frame">
+          <img class="kb-slide active" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Rural woman and child in Benue State, Nigeria">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800" alt="Rural women in vocational empowerment training">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800" alt="Women learning tailoring and craft skills">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800" alt="Sustainable agriculture and food security in rural Nigeria">
+          <img class="kb-slide" src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800" alt="Maternal and child healthcare outreach">
+        </div>
+        <div class="hero-stat-chip"><strong>7</strong><span>Flagship Programs</span></div>
+        <div class="hero-badge">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <strong>Incorporated Trustee</strong>
+          <span>CAC/IT/9430700 &middot; est. 21 March 2026</span>
+        </div>
+      </div>
+    </div>
+    <a href="#welcome" class="scroll-indicator" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <section class="section" id="welcome">
+    <div class="container welcome-grid">
+      <div class="welcome-image reveal">
+        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700" alt="Rural women empowerment training">
+        <div class="experience-badge"><strong>Est. 2026</strong><span>CAC/IT/9430700</span></div>
+        <i class="fas fa-leaf motif" style="top:-16px; right:38px; font-size:1.4rem; color:var(--harvest-gold); opacity:.55; animation: drift1 8s ease-in-out infinite;" aria-hidden="true"></i>
+      </div>
+      <div class="welcome-text reveal">
+        <p class="eyebrow">Welcome to RICWEI</p>
+        <h2>Together We Can Create Lasting Change</h2>
+        <p>Rural Impact for Children and Women Empowerment Initiative (RICWEI) is a not-for-profit, non-political organization incorporated on 21 March 2026 under the Companies and Allied Matters Act, CAP C20 LFN 2004. We work to promote the economic empowerment of rural women and adolescent girls, improve access to quality education and healthcare, and advocate for policies that advance gender equality and social inclusion.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Vocational training &amp; entrepreneurship development</li>
+          <li><i class="fas fa-check-circle"></i> Maternal &amp; child health interventions</li>
+          <li><i class="fas fa-check-circle"></i> Scholarships for indigent pupils</li>
+          <li><i class="fas fa-check-circle"></i> Community leadership &amp; rights-based education</li>
+        </ul>
+        <a href="about.html" class="stitch-link">Read Our Story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow on-dark">What We Stand For</p>
+        <h2>Our Mission, Vision &amp; Values</h2>
+        <p class="lede">Driven by purpose, guided by integrity, and powered by community.</p>
+      </div>
+      <div class="mvv-grid reveal-stagger">
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-bullseye"></i></div><h3>Our Mission</h3><p>To empower rural women, adolescents, and children through vocational training, entrepreneurship development, education, healthcare access, and policy advocacy that promotes gender equality and social inclusion.</p></div>
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-eye"></i></div><h3>Our Vision</h3><p>A Nigeria where every rural woman and child lives with dignity, has access to quality education and healthcare, and enjoys equal opportunity to thrive.</p></div>
+        <div class="mvv-card reveal"><div class="mvv-icon"><i class="fas fa-heart"></i></div><h3>Our Values</h3><p>Integrity, Inclusion, Empowerment, Sustainability, Collaboration, Respect for Human Dignity.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-millet">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Our Programs</p>
+        <h2>Causes We Champion</h2>
+        <p class="lede">Seven interconnected focus areas drive our work across rural Nigerian communities.</p>
+      </div>
+      <div class="causes-grid reveal-stagger">
+        <div class="cause-card reveal" id="economic-empowerment">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=700');"><span class="cause-tag">Empowerment</span></div>
+    <div class="cause-content">
+      <h3>Women Economic Empowerment Program</h3>
+      <p>Skills acquisition in tailoring, catering, soap-making, and beadwork, with micro-grants and cooperative formation to sustain livelihoods.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="scholarship-scheme">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700');"><span class="cause-tag">Education</span></div>
+    <div class="cause-content">
+      <h3>Back-to-School & Scholarship Scheme</h3>
+      <p>Scholarships, learning materials, and school infrastructure support for indigent pupils in rural Benue communities.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="maternal-child-health">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=700');"><span class="cause-tag">Healthcare</span></div>
+    <div class="cause-content">
+      <h3>Maternal & Child Health Initiative</h3>
+      <p>Antenatal care support, immunization drives, nutrition education, and community health worker training.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="end-harmful-practices">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700');"><span class="cause-tag">Advocacy</span></div>
+    <div class="cause-content">
+      <h3>End Harmful Practices Campaign</h3>
+      <p>Community dialogues, sensitization campaigns, and rights-based education to end child marriage, GBV, and inheritance denial.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="leadership-academy">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=700');"><span class="cause-tag">Leadership</span></div>
+    <div class="cause-content">
+      <h3>Women & Youth Leadership Academy</h3>
+      <p>Capacity-building workshops on civic participation, governance, public speaking, and project management.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="cause-card reveal" id="agriculture-food-security">
+    <div class="cause-img" style="background-image:url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=700');"><span class="cause-tag">Agriculture</span></div>
+    <div class="cause-content">
+      <h3>Sustainable Agriculture & Food Security</h3>
+      <p>Training in climate-smart agriculture, access to improved seedlings, and farmer cooperatives for rural women.</p>
+      <a href="donate.html" class="stitch-link">Support This Program <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+      </div>
+      <div style="text-align:center;margin-top:44px;">
+        <a href="causes.html" class="btn btn-outline-dark">Explore All Programs <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid reveal-stagger">
+        <div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-users" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="500">0</h2>
+          <p>Women Empowered</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-child" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="300">0</h2>
+          <p>Children Supported</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-school" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="15">0</h2>
+          <p>Rural Schools Reached</p>
+        </div><div class="stat-item reveal">
+          <div class="stat-icon" style="margin-bottom:10px;"><i class="fas fa-handshake" style="color:var(--harvest-gold);font-size:1.4rem;"></i></div>
+          <h2 class="counter" data-target="10">0</h2>
+          <p>Community Partners</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Become a Volunteer or Partner With Us</h2>
+        <p>Your time, skills, and resources can transform lives. Join our mission to empower rural communities today.</p>
+        <div class="cta-buttons">
+          <a href="donate.html" class="btn btn-white">Donate Now</a>
+          <a href="get-involved.html" class="btn btn-outline-light">Volunteer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow">Our Leadership</p>
+        <h2>Board of Trustees</h2>
+        <p class="lede">Five dedicated trustees governing our affairs with integrity and passion.</p>
+      </div>
+      <div class="team-grid reveal-stagger">
+        <div class="team-card reveal">
+          <div class="team-img"><img src="images/Prof. Iornumbe Usar.png" alt="Iornumbe Joseph Usar"></div>
+          <h3>Professor Iornumbe Joseph Usar</h3><p class="role">Chairman, Board of Trustees</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="images/Rev_Fr_Apuu_Doolumum.jpg" alt="Rev.Fr.Philip Doolumum Apuu"></div>
+          <h3>Rev.Fr.Philip Doolumum Apuu</h3><p class="role">Trustee & A Priest </p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="images/Desmond_Iorhemen_Abi.jpg" alt="Engr. Desmond Iorhemen Abi"></div>
+          <h3>Engr. Desmond Iorhemen Abi</h3><p class="role">Trustee & Youth Coordinator</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="images/Kaneng Adamu Pwol.jpeg" alt="Kaneng Adamu Pwol"></div>
+          <h3>Kaneng Adamu Pwol</h3><p class="role">Trustee & Public Health Spacialist</p>
+        </div><div class="team-card reveal">
+          <div class="team-img"><img src="images/Royce_terna.jpg" alt="Terna Samuel Iombor"></div>
+          <h3>Dr.Terna Samuel Iombor Ph.D</h3><p class="role">Trustee Secretary & President/CEO</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="about.html#board" class="btn btn-outline-dark">Meet the Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow on-dark">In Their Words</p>
+        <h2>Voices From Our Community</h2>
+      </div>
+      <div class="testimonial-slider">
+    <button class="t-arrow prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+    <div class="testimonial-track">
+      <div class="testimonial-slides">
+        <div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a direct quote from a beneficiary once the first training cohort graduates.</p>
+            <div class="who"><strong>Beneficiary name</strong><span>Vocational Training Cohort 1</span></div>
+          </div>
+        </div><div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a quote from a community or traditional leader RICWEI has partnered with.</p>
+            <div class="who"><strong>Community partner name</strong><span>Community leader, Benue State</span></div>
+          </div>
+        </div><div class="t-slide">
+          <div class="t-card">
+            <i class="fas fa-quote-left quote"></i>
+            <p class="quote-text">Testimonial placeholder — replace with a quote from a scholarship recipient or their guardian.</p>
+            <div class="who"><strong>Guardian / pupil name</strong><span>Back-to-School & Scholarship Scheme</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="t-arrow next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+    <div class="t-nav"></div>
+  </div>
+    </div>
+  </section>
+
+  <section class="section on-parchment">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Latest Updates</p>
+        <h2>News &amp; Stories</h2>
+        <p class="lede">Stay informed about our impact and the communities we serve.</p>
+      </div>
+      <div class="news-grid reveal-stagger">
+        <div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Programs</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> March 25, 2026</span>
+      <h3>RICWEI Officially Launches Operations in Benue State</h3>
+      <p>Following our incorporation under CAC/IT/9430700, we are excited to begin our empowerment programs across rural communities.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Incorporation</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> March 21, 2026</span>
+      <h3>Incorporation: A New Chapter for Rural Empowerment</h3>
+      <p>RICWEI was officially registered with the Corporate Affairs Commission as an Incorporated Trustee on the 21st of March, 2026.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div><div class="news-card reveal">
+    <div class="news-img" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=600');"></div>
+    <div class="news-content">
+      <div class="news-cats"><span>Empowerment</span></div>
+      <span class="news-date"><i class="far fa-calendar"></i> Upcoming</span>
+      <h3>Vocational Training Cohort 1 — Call for Applications</h3>
+      <p>Our first cohort of vocational skills training for rural women and adolescent girls opens soon.</p>
+      <a href="events.html" class="stitch-link">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="events.html" class="btn btn-outline-dark">More Updates</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section class="section tight">
+<div class="container">
+      <div class="section-header center">
+        <p class="eyebrow">Recognition & Trusted Collaboration</p>
+        <h2>Partners &amp; Organizations We Work With</h2>
+        <p class="lede">RICWEI is recognized and supported by the following platforms and institutions.</p>
+      </div>
+    </div>
+
+   
+    <style>
+      .partners-section{padding:56px 0 64px;}
+      .partners-section .section-header{margin-bottom:34px;}
+      .partners-marquee{overflow:hidden;position:relative;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+      .partners-track{display:flex;align-items:stretch;width:max-content;gap:20px;animation:partners-scroll 28s linear infinite;}
+      .partners-marquee:hover .partners-track{animation-play-state:paused;}
+      .partner-badge{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(17,46,79,0.08);border-radius:14px;padding:18px 28px;width:210px;flex:0 0 auto;box-shadow:0 2px 10px rgba(17,46,79,0.05);transition:box-shadow .25s ease,transform .25s ease;}
+      .partner-badge:hover{box-shadow:0 8px 20px rgba(17,46,79,0.12);transform:translateY(-3px);}
+      .partner-badge img{max-height:34px;width:auto;max-width:100%;filter:grayscale(1) opacity(0.82);transition:filter .25s ease;animation:partner-rise 4s ease-in-out infinite backwards;}
+      .partner-badge:hover img{filter:grayscale(0) opacity(1);}
+      .partner-badge.sam-badge img{max-height:30px;}
+      @keyframes partners-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+      @keyframes partner-rise{
+        0%{opacity:0;-webkit-clip-path:inset(100% 0 0 0);clip-path:inset(100% 0 0 0);}
+        22%{opacity:1;-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0);}
+        72%{opacity:1;-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0);}
+        100%{opacity:0;-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0);}
+      }
+      .partner-badge:nth-child(1) img{animation-delay:0s;}
+      .partner-badge:nth-child(2) img{animation-delay:.4s;}
+      .partner-badge:nth-child(3) img{animation-delay:.8s;}
+      .partner-badge:nth-child(4) img{animation-delay:1.2s;}
+      .partner-badge:nth-child(5) img{animation-delay:1.6s;}
+      .partner-badge:nth-child(6) img{animation-delay:2s;}
+      .partner-badge:nth-child(7) img{animation-delay:2.4s;}
+      .partner-badge:nth-child(8) img{animation-delay:2.8s;}
+      .partner-badge:nth-child(9) img{animation-delay:3.2s;}
+      .partner-badge:nth-child(10) img{animation-delay:3.6s;}
+      @media (max-width:600px){.partner-badge{width:160px;padding:14px 18px;}.partners-track{gap:14px;animation-duration:20s;}}
+      @media (prefers-reduced-motion:reduce){.partners-track{animation:none;}.partners-marquee{overflow-x:auto;}.partner-badge img{animation:none;-webkit-clip-path:none;clip-path:none;opacity:1;}}
+    </style>
+    
+    <div class="partners-marquee reveal">
+      <div class="partners-track">
+        <div class="partner-badge sam-badge"><img src="images/logo/partners/sam-gov.svg" alt="SAM.gov — System for Award Management"></div>
+        <div class="partner-badge"><img src="images/logo/partners/google-for-nonprofits.svg" alt="Google for Nonprofits"></div>
+        <div class="partner-badge"><img src="images/logo/partners/goodstack.svg" alt="Goodstack"></div>
+        <div class="partner-badge"><img src="images/logo/partners/benevity.svg" alt="Benevity"></div>
+        <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+        <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+       <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+        <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+       <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+        <div class="partner-badge"><img src="images/logo/partners/gogreen.svg" alt="GOGreen"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div>
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Get program updates, impact stories, and volunteer opportunities in your inbox.</p>
+        </div>
+        <form class="newsletter-form" data-validate>
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="images/logo/ricwei-mark.svg" alt="RICWEI emblem" class="logo-mark-img">
+            <strong>RICWEI</strong>
+          </div>
+          <p>Rural Impact for Children and Women Empowerment Initiative — empowering rural women, adolescents, and children across Nigeria through sustainable, community-driven programs.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="causes.html">Our Programs</a></li>
+            <li><a href="events.html">News & Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+            <li><a href="get-involved.html#partner">Partner With Us</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="get-involved.html#faq">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> 9, Okada Chairman Street, Behind Bahaus Construction, Off Yaikyor New Road, Makurdi/Aliade, Benue State, Nigeria</li>
+            <li><i class="fas fa-phone"></i> +234 706 491 6811</li>
+            <li><i class="fas fa-envelope"></i> info@ricwei.org.ng</li>
+            <li><i class="fas fa-certificate"></i> CAC/IT/9430700</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rural Impact for Children and Women Empowerment Initiative (RICWEI). All Rights Reserved.</p>
+        <p>Incorporated Trustee — Federal Republic of Nigeria <a href="#">Privacy</a> <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+  <script src="js/script.js"></script>
+</body>
+</html>

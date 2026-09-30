@@ -1,0 +1,70 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#C68F2A"/>
+      <stop offset="100%" stop-color="#E4A93A"/>
+    </linearGradient>
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="228"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base disc -->
+  <circle cx="256" cy="256" r="228" fill="#FBF8F1"/>
+
+  <!-- Rising sun arcs, clipped to disc -->
+  <g clip-path="url(#circleClip)">
+    <circle cx="256" cy="392" r="150" fill="url(#sunGrad)"/>
+    <circle cx="256" cy="392" r="112" fill="#F6EEDC"/>
+    <circle cx="256" cy="392" r="112" fill="none" stroke="#E4A93A" stroke-width="3" opacity=".5"/>
+    <!-- sun rays -->
+    <g stroke="#E4A93A" stroke-width="6" stroke-linecap="round" opacity=".85">
+      <line x1="256" y1="216" x2="256" y2="244"/>
+      <line x1="176" y1="248" x2="198" y2="262"/>
+      <line x1="336" y1="248" x2="314" y2="262"/>
+      <line x1="130" y1="310" x2="158" y2="312"/>
+      <line x1="382" y1="310" x2="354" y2="312"/>
+    </g>
+  </g>
+
+  <!-- Moss ground mound -->
+  <path d="M 118 430 Q 256 372 394 430 L 394 470 Q 256 500 118 470 Z" fill="#4F7A52" clip-path="url(#circleClip)"/>
+
+  <!-- Guardian figure (mother) — sheltering arch -->
+  <g fill="#1E2A4A">
+    <!-- head -->
+    <circle cx="256" cy="222" r="30"/>
+    <!-- sheltering arms/cloak forming protective arch over child -->
+    <path d="M 256 250
+             C 176 250 150 320 150 400
+             L 150 430
+             L 194 430
+             L 194 400
+             C 194 344 216 300 256 296
+             C 296 300 318 344 318 400
+             L 318 430
+             L 362 430
+             L 362 400
+             C 362 320 336 250 256 250 Z"/>
+  </g>
+
+  <!-- Child figure sheltered within -->
+  <g fill="#FBF8F1">
+    <circle cx="256" cy="352" r="17"/>
+    <path d="M 256 370 C 234 370 224 392 224 416 L 224 430 L 288 430 L 288 416 C 288 392 278 370 256 370 Z"/>
+  </g>
+
+  <!-- Adire cloth dot arc, referencing indigo textile pattern -->
+  <g fill="#B85C36">
+    <circle cx="160" cy="182" r="5.5"/>
+    <circle cx="186" cy="152" r="5.5"/>
+    <circle cx="218" cy="130" r="5.5"/>
+    <circle cx="294" cy="130" r="5.5"/>
+    <circle cx="326" cy="152" r="5.5"/>
+    <circle cx="352" cy="182" r="5.5"/>
+  </g>
+
+  <!-- Outer ring, stitched cloth-edge style -->
+  <circle cx="256" cy="256" r="228" fill="none" stroke="#1E2A4A" stroke-width="7"/>
+  <circle cx="256" cy="256" r="216" fill="none" stroke="#1E2A4A" stroke-width="1.5" stroke-dasharray="2 7" opacity=".55"/>
+</svg>
